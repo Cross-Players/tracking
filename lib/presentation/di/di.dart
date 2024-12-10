@@ -3,6 +3,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:gps/data/config/env.dart';
 import 'package:gps/data/config/network/common_intecepter.dart';
+import 'package:gps/data/config/rest_client/app_rest_client.dart';
 import 'package:gps/presentation/di/di.config.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -17,8 +18,8 @@ Future<void> initDI(ENVType env) async {
   di
     ..registerLazySingleton<ENVType>(() => env)
     ..registerFactory<Env>(() => env.toENV())
-    // ..registerFactory<AppRestClient>(
-    //     () => AppRestClient.from(di<Dio>(), di<ENVType>().toENV()))
+    ..registerFactory<AppRestClient>(
+        () => AppRestClient.from(di<Dio>(), di<ENVType>().toENV()))
     ..registerFactory<SharedPreferences>(() => sharedPreferences)
     ..registerFactory<FlutterSecureStorage>(() => const FlutterSecureStorage())
     ..registerLazySingleton<CommonInterceptor>(
