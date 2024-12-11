@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gps/presentation/defination/string.dart';
 import 'package:gps/presentation/di/di.dart';
 import 'package:gps/presentation/feature/login/bloc/logic_cubit.dart';
+import 'package:gps/presentation/route/route.dart';
 import 'package:gps/presentation/widget/base_state.dart';
 
 class LoginPage extends StatefulWidget {
@@ -17,20 +19,21 @@ class _LoginPageState extends BaseState<LoginPage> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback(
-      (timeStamp) {
-        _cubit.onLogin();
-      }
-    );
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      _cubit.onLogin();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<LoginCubit>(
       create: (_) => _cubit,
-      child: const Scaffold(
+      child: Scaffold(
           body: Center(
-        child: Text('Login page'),
+        child: GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: () => navigatorState.pushNamed(ScreenName.home),
+            child: Text('Login page')),
       )),
     );
   }
