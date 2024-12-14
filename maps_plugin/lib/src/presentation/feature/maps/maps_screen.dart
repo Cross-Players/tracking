@@ -29,12 +29,24 @@ class _MapsScreenState extends State<MapsScreen> {
     zoom: 16,
   );
 
+  final Map<MarkerId, Marker> _markers = <MarkerId, Marker>{};
+
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      _cubit.init();
-    });
+    _markers[const MarkerId('mylocation')] = const Marker(
+      markerId: MarkerId('mylocation'),
+      position: LatLng(21.044952649719196, 105.80855927650042),
+    );
+    _markers[const MarkerId('linhtinh')] = const Marker(
+      markerId: MarkerId('linhtinh'),
+      position: LatLng(22, 105),
+    );
+    WidgetsBinding.instance.addPostFrameCallback(
+      (timeStamp) {
+        _cubit.init();
+      },
+    );
   }
 
   @override
@@ -53,16 +65,7 @@ class _MapsScreenState extends State<MapsScreen> {
                   },
                   initialCameraPosition: initialCameraPosition,
                   mapType: state.viewModel.mapType,
-                  markers: {
-                    const Marker(
-                      markerId: MarkerId('mylocation'),
-                      position: LatLng(21.044952649719196, 105.80855927650042),
-                    ),
-                    const Marker(
-                      markerId: MarkerId('linhtinh'),
-                      position: LatLng(22, 105),
-                    ),
-                  },
+                  markers: Set<Marker>.of(_markers.values),
                 ),
                 Positioned(
                     right: 20,
