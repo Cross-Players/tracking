@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maps_plugin/maps_plugin.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Home page'),
+        child: MapsScreen(param: MapsScreenParam()),
       ),
     );
   }

@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
 import 'package:gps/presentation/feature/home/home_page.dart';
@@ -17,13 +17,13 @@ class AppRoute {
 
     switch (name) {
       case ScreenName.root:
-        window.history.pushState("", "", "/login");
+        html.window.history.pushState("", "", "/login");
         return _materialPage(const LoginPage(), settings);
       case ScreenName.login:
-        window.history.pushState("", "", "/login");
+        html.window.history.pushState("", "", "/login");
         return _materialPage(const LoginPage(), settings);
       case ScreenName.home:
-        window.history.pushState("", "", "/home");
+        html.window.history.pushState("", "", "/home");
         return _materialPage(const HomePage(), settings);
       default:
         return _materialPage(const EmptyPage(), settings);

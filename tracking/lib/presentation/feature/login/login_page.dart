@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gps/presentation/defination/string.dart';
 import 'package:gps/presentation/di/di.dart';
-import 'package:gps/presentation/feature/login/bloc/logic_cubit.dart';
+import 'package:gps/presentation/feature/login/bloc/login_cubit.dart';
 import 'package:gps/presentation/route/route.dart';
 import 'package:gps/presentation/widget/base_state.dart';
 
@@ -20,7 +20,7 @@ class _LoginPageState extends BaseState<LoginPage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      _cubit.onLogin();
+      // _cubit.onLogin();
     });
   }
 
@@ -33,7 +33,7 @@ class _LoginPageState extends BaseState<LoginPage> {
         child: GestureDetector(
             behavior: HitTestBehavior.translucent,
             onTap: () => navigatorState.pushNamed(ScreenName.home),
-            child: Text('Login page')),
+            child: const Text('Login page')),
       )),
     );
   }
