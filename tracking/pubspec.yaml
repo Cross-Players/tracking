@@ -46,6 +46,9 @@ dependencies:
   dartz: 0.10.1
   tracking_core:
     path: ../tracking_core
+  maps_plugin:
+    path: ../maps_plugin
+  flutter_dotenv: 5.0.2
 
 dev_dependencies:
   flutter_test:

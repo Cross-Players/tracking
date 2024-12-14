@@ -11,7 +11,7 @@
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:gps/domain/repository/auth_repository.dart' as _i913;
 import 'package:gps/domain/use_case/auth/login_use_case.dart' as _i482;
-import 'package:gps/presentation/feature/login/bloc/logic_cubit.dart' as _i234;
+import 'package:gps/presentation/feature/login/bloc/login_cubit.dart' as _i669;
 import 'package:gps/presentation/route/route.dart' as _i763;
 import 'package:gps/presentation/utils/widget_util.dart' as _i723;
 import 'package:injectable/injectable.dart' as _i526;
@@ -34,7 +34,7 @@ _i174.GetIt $initGetIt(
       () => _i913.AuthRepositoryImpl(gh<_i569.AppRestClient>()));
   gh.factory<_i482.LoginUseCase>(
       () => _i482.LoginUseCase(gh<_i913.AuthRepository>()));
-  gh.factory<_i234.LoginCubit>(
-      () => _i234.LoginCubit(gh<_i482.LoginUseCase>()));
+  gh.factory<_i669.LoginCubit>(
+      () => _i669.LoginCubit(gh<_i482.LoginUseCase>()));
   return getIt;
 }
