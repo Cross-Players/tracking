@@ -11,17 +11,31 @@ class LoginCubit extends Cubit<LoginState> {
   final LoginUseCase _loginUseCase;
 
   Future<void> onLogin() async {
-    final result = await _loginUseCase.call(LoginUseCaseParam(
-        phoneNumber: state.viewModel.username,
-        password: state.viewModel.password));
+    print(state.viewModel);
 
-    result.fold(
-      (BaseException exception) {
-        emit(LoginErrorState(viewModel: state.viewModel, exception: exception));
-      },
-      (LoginRaw data) {
-        emit(LoginSuccessState(viewModel: state.viewModel));
-      },
-    );
+    // final result = await _loginUseCase.call(LoginUseCaseParam(
+    //     phoneNumber: state.viewModel.username,
+    //     password: state.viewModel.password));
+
+    emit(LoginErrorState(viewModel: state.viewModel));
+    emit(LoginSuccessState(viewModel: state.viewModel));
+    // result.fold(
+    //   (BaseException exception) {
+    //     emit(LoginErrorState(viewModel: state.viewModel, exception: exception));
+    //   },
+    //   (LoginRaw data) {
+    //     emit(LoginSuccessState(viewModel: state.viewModel));
+    //   },
+    // );
+  }
+
+  void onUsernameChanged(String username) {
+    emit(state.copyWith(
+        viewModel: state.viewModel.copyWith(username: username)));
+  }
+
+  void onPasswordChanged(String password) {
+    emit(state.copyWith(
+        viewModel: state.viewModel.copyWith(password: password)));
   }
 }
