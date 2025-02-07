@@ -22,14 +22,29 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "app_name": MessageLookupByLibrary.simpleMessage("GPS"),
-        "content_does_not_exist":
-            MessageLookupByLibrary.simpleMessage("Nội dung không tồn tại"),
-        "do_not_empty":
-            MessageLookupByLibrary.simpleMessage("Không được bỏ trống"),
-        "something_wrong": MessageLookupByLibrary.simpleMessage(
-            "Lỗi hệ thống. Vui lòng thử lại!"),
-        "system_maintain": MessageLookupByLibrary.simpleMessage(
-            "Hệ thống đang bảo trì. Vui lòng thử lại!")
-      };
+    "app_name": MessageLookupByLibrary.simpleMessage("GPS"),
+    "content_does_not_exist": MessageLookupByLibrary.simpleMessage(
+      "Nội dung không tồn tại",
+    ),
+    "do_not_empty": MessageLookupByLibrary.simpleMessage("Không được bỏ trống"),
+    "gps_monitoring": MessageLookupByLibrary.simpleMessage("Giám sát xe GPS"),
+    "invalid_credentials": MessageLookupByLibrary.simpleMessage(
+      "Tên đăng nhập hoặc mật khẩu không đúng!",
+    ),
+    "login": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
+    "login_success_message": MessageLookupByLibrary.simpleMessage(
+      "Đăng nhập thành công!",
+    ),
+    "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
+    "password_length_warning": MessageLookupByLibrary.simpleMessage(
+      "Vui lòng nhập mật khẩu dài 6 ký tự",
+    ),
+    "something_wrong": MessageLookupByLibrary.simpleMessage(
+      "Lỗi hệ thống. Vui lòng thử lại!",
+    ),
+    "system_maintain": MessageLookupByLibrary.simpleMessage(
+      "Hệ thống đang bảo trì. Vui lòng thử lại!",
+    ),
+    "username": MessageLookupByLibrary.simpleMessage("Tên đăng nhập"),
+  };
 }

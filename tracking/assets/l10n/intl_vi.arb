@@ -3,5 +3,12 @@
     "something_wrong": "Lỗi hệ thống. Vui lòng thử lại!",
     "system_maintain": "Hệ thống đang bảo trì. Vui lòng thử lại!",
     "do_not_empty": "Không được bỏ trống",
-    "content_does_not_exist": "Nội dung không tồn tại"
+    "content_does_not_exist": "Nội dung không tồn tại",
+    "login_success_message": "Đăng nhập thành công!",
+    "gps_monitoring": "Giám sát xe GPS",
+    "username": "Tên đăng nhập",
+    "password": "Mật khẩu",
+    "password_length_warning": "Vui lòng nhập mật khẩu dài 6 ký tự",
+    "login": "Đăng nhập",
+    "invalid_credentials": "Tên đăng nhập hoặc mật khẩu không đúng!"
   }

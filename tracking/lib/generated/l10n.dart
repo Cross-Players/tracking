@@ -18,17 +18,20 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+      _current != null,
+      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+    );
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -41,8 +44,10 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(
+      instance != null,
+      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+    );
     return instance!;
   }
 
@@ -52,12 +57,7 @@ class S {
 
   /// `GPS`
   String get app_name {
-    return Intl.message(
-      'GPS',
-      name: 'app_name',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('GPS', name: 'app_name', desc: '', args: []);
   }
 
   /// `Lỗi hệ thống. Vui lòng thử lại!`
@@ -95,6 +95,61 @@ class S {
     return Intl.message(
       'Nội dung không tồn tại',
       name: 'content_does_not_exist',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Đăng nhập thành công!`
+  String get login_success_message {
+    return Intl.message(
+      'Đăng nhập thành công!',
+      name: 'login_success_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Giám sát xe GPS`
+  String get gps_monitoring {
+    return Intl.message(
+      'Giám sát xe GPS',
+      name: 'gps_monitoring',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tên đăng nhập`
+  String get username {
+    return Intl.message('Tên đăng nhập', name: 'username', desc: '', args: []);
+  }
+
+  /// `Mật khẩu`
+  String get password {
+    return Intl.message('Mật khẩu', name: 'password', desc: '', args: []);
+  }
+
+  /// `Vui lòng nhập mật khẩu dài 6 ký tự`
+  String get password_length_warning {
+    return Intl.message(
+      'Vui lòng nhập mật khẩu dài 6 ký tự',
+      name: 'password_length_warning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Đăng nhập`
+  String get login {
+    return Intl.message('Đăng nhập', name: 'login', desc: '', args: []);
+  }
+
+  /// `Tên đăng nhập hoặc mật khẩu không đúng!`
+  String get invalid_credentials {
+    return Intl.message(
+      'Tên đăng nhập hoặc mật khẩu không đúng!',
+      name: 'invalid_credentials',
       desc: '',
       args: [],
     );
