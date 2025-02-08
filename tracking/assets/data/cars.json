@@ -1,0 +1,42 @@
+[
+{
+"id": "1600000014",
+"speed": "0 km/h",
+"days": "65 ngày",
+"address": "45 Đ. Lê Trọng Tấn, Dương Nội, Hà Đông, Hà Nội",
+"status": "Mất kết nối",
+"lastConnection": "2024-12-03 17:49:35",
+"remainingDays": "Còn 284 ngày đến hạn thanh toán",
+"trip": {
+"gps": "OK",
+"engine": "Tắt",
+"kmToday": "0 km",
+"totalKm": "26.3 km",
+"tripToday": "0p",
+"tripLatest": "0p",
+"overSpeed": "0 lần",
+"totalUsed": "0 lần",
+"battery": "11.85 VDC",
+"currentLocationTime": "65 ngày"
+},
+"driver": "Chưa đăng nhập",
+"service": {
+"customer": "testxm",
+"customerPhone": "Không rõ",
+"paymentDue": "2025-11-18",
+"installDate": "Không rõ",
+"device": "1600000014"
+},
+"management": {
+"dataStorage": "Không",
+"firmwareVersion": "33",
+"location": "20.985460, 105.742540",
+"gpsSlots": "9",
+"totalMessages": "12",
+"shockSensor": "Không",
+"suddenBrake": "Không",
+"currentSpeed": "120 km/h",
+"emergency": "Không"
+}
+}
+]
