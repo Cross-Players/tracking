@@ -6,7 +6,7 @@ import 'package:gps/presentation/feature/login/login_page.dart';
 import 'package:gps/presentation/feature/monitor/monitor_page.dart';
 import 'package:gps/presentation/widget/empty_page.dart';
 import 'package:injectable/injectable.dart';
-import 'package:gps/presentation/defination/string.dart';
+import 'package:gps/presentation/definition/string.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 final NavigatorState navigatorState = navigatorKey.currentState!;

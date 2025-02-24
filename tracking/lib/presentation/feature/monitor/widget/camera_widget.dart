@@ -1,23 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:gps/presentation/feature/monitor/view_model/vehicle_status.dart';
+import 'package:gps/presentation/utils/services/time_service.dart';
 
 class CameraGridScreen extends StatefulWidget {
-  const CameraGridScreen({super.key});
+  final VehicleStatus selectedVehicle;
+  const CameraGridScreen({super.key, required this.selectedVehicle});
 
   @override
   _CameraGridScreenState createState() => _CameraGridScreenState();
 }
 
 class _CameraGridScreenState extends State<CameraGridScreen> {
+  late TimeService _timeService;
+  @override
+  void initState() {
+    super.initState();
+    _timeService = TimeService();
+    _timeService.startTimer(() {
+      setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    _timeService.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          // Grid hiển thị 4 camera
           Expanded(
             child: GridView.builder(
-              padding: EdgeInsets.all(8.0),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              padding: const EdgeInsets.all(8.0),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 8,
                 mainAxisSpacing: 8,
@@ -38,26 +56,36 @@ class _CameraGridScreenState extends State<CameraGridScreen> {
                           Center(
                             child: Text(
                               'Camera ${index + 1}',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 18),
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 18),
                             ),
                           ),
                           Positioned(
                             top: 8,
                             left: 8,
-                            child: Text(
-                              '11.051555 • 106.757940 • 000KM/H',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 12),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '${widget.selectedVehicle.management.location}• ${widget.selectedVehicle.speed} KM/H',
+                                  style: const TextStyle(
+                                      color: Colors.white, fontSize: 12),
+                                ),
+                                Text(
+                                  '${widget.selectedVehicle.driver} hehe',
+                                  style: const TextStyle(
+                                      color: Colors.white, fontSize: 12),
+                                ),
+                              ],
                             ),
                           ),
                           Positioned(
                             bottom: 8,
                             left: 8,
                             child: Text(
-                              '02-19-2025 10:11:42 UTC GMT',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 12),
+                              '${_timeService.currentTime} UTC GMT',
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 12),
                             ),
                           ),
                         ],
@@ -65,32 +93,34 @@ class _CameraGridScreenState extends State<CameraGridScreen> {
                     ),
                     Container(
                       color: Colors.black87,
-                      padding: EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             '14.12KB/s',
                             style: TextStyle(color: Colors.white, fontSize: 16),
                           ),
                           Row(
                             children: [
                               IconButton(
-                                icon:
-                                    Icon(Icons.volume_off, color: Colors.white),
+                                icon: const Icon(Icons.volume_off,
+                                    color: Colors.white),
                                 onPressed: () {},
                               ),
                               IconButton(
-                                icon: Icon(Icons.pause, color: Colors.white),
+                                icon: const Icon(Icons.pause,
+                                    color: Colors.white),
                                 onPressed: () {},
                               ),
                               IconButton(
-                                icon: Icon(Icons.camera, color: Colors.white),
+                                icon: const Icon(Icons.camera,
+                                    color: Colors.white),
                                 onPressed: () {},
                               ),
                               IconButton(
-                                icon:
-                                    Icon(Icons.fullscreen, color: Colors.white),
+                                icon: const Icon(Icons.fullscreen,
+                                    color: Colors.white),
                                 onPressed: () {},
                               ),
                             ],
@@ -103,31 +133,40 @@ class _CameraGridScreenState extends State<CameraGridScreen> {
               },
             ),
           ),
-          // Thông tin máy tính và nút chức năng
           Container(
-            color: Colors.black87,
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Thông tin Xe:',
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                SizedBox(height: 16),
+                Text(
+                  'Người lái xe: ${widget.selectedVehicle.driver}',
+                ),
+                Text(
+                  'Tốc độ: ${widget.selectedVehicle.speed} KM/H',
+                ),
+                Text(
+                  'Vị trí: ${widget.selectedVehicle.management.location}',
+                ),
+                Text(
+                  'Thời gian: ${widget.selectedVehicle.lastConnection}',
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ElevatedButton(
                       onPressed: () {},
-                      child: Text('Chức năng 1'),
+                      child: const Text('Function 1'),
                     ),
                     ElevatedButton(
                       onPressed: () {},
-                      child: Text('Chức năng 2'),
+                      child: const Text('Function 2'),
                     ),
                   ],
                 )

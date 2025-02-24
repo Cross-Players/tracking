@@ -8,17 +8,17 @@ part 'home_state.freezed.dart';
 class HomeState with _$HomeState {
   const HomeState._();
 
-  const factory HomeState.HomeInitialState({
+  const factory HomeState.homeInitialState({
     @Default(HomeViewModel()) HomeViewModel viewModel,
   }) = HomeInitialState;
-  const factory HomeState.HomeLoadingState({
+  const factory HomeState.homeLoadingState({
     @Default(HomeViewModel()) HomeViewModel viewModel,
   }) = HomeLoadingState;
   const factory HomeState.selectedVehicleState({
     @Default(HomeViewModel()) HomeViewModel viewModel,
   }) = SelectedVehicleState;
 
-  const factory HomeState.HomeErrorState({
+  const factory HomeState.homeErrorState({
     @Default(HomeViewModel()) HomeViewModel viewModel,
     @Default(BaseException()) BaseException exception,
   }) = HomeErrorState;

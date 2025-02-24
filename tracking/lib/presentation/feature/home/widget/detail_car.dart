@@ -14,53 +14,65 @@ class CarDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(selectedVehicle.id,
                 style:
                     const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
             Text(S.of(context).last_connection(selectedVehicle.lastConnection)),
             Text(selectedVehicle.address),
-            Text('${selectedVehicle.remainingDays}'),
+            Text(selectedVehicle.remainingDays),
             const SizedBox(height: 10),
-            _buildSectionTitle(S.of(context).journey),
-            _buildInfoRow("GPS", selectedVehicle.trip.gps),
-            _buildInfoRow(S.of(context).engine, selectedVehicle.trip.engine),
-            _buildInfoRow(
-                S.of(context).km_in_day, '${selectedVehicle.trip.kmToday}'),
-            _buildInfoRow(S.of(context).total_km_traveled,
-                '${selectedVehicle.trip.totalKm}'),
-            _buildInfoRow(S.of(context).current_speed,
-                selectedVehicle.trip.currentLocationTime),
+            SectionTitle(title: S.of(context).journey),
+            InfoRow(label: "GPS",value: selectedVehicle.trip.gps),
+            InfoRow(label:S.of(context).engine, value: selectedVehicle.trip.engine),
+            InfoRow(
+                label:S.of(context).km_in_day,value: selectedVehicle.trip.kmToday),
+            InfoRow(label:S.of(context).total_km_traveled,
+                value:selectedVehicle.trip.totalKm),
+            InfoRow(label:S.of(context).current_speed,
+                value:selectedVehicle.trip.currentLocationTime),
             const SizedBox(height: 10),
-            _buildSectionTitle(S.of(context).driver),
-            _buildInfoRow(S.of(context).account, selectedVehicle.driver),
+            SectionTitle(title: S.of(context).driver),
+            InfoRow(label:S.of(context).account,value: selectedVehicle.driver),
             const SizedBox(height: 10),
-            _buildSectionTitle(S.of(context).service),
-            _buildInfoRow(
-                S.of(context).customer, selectedVehicle.service.customer),
-            _buildInfoRow(S.of(context).customer_phone,
-                selectedVehicle.service.customerPhone),
-            _buildInfoRow(S.of(context).payment_deadline,
-                selectedVehicle.service.paymentDue),
-            _buildInfoRow(S.of(context).device, selectedVehicle.service.device),
+            SectionTitle(title: S.of(context).service),
+            InfoRow(
+                label:S.of(context).customer, value:selectedVehicle.service.customer),
+            InfoRow(label:S.of(context).customer_phone,
+                value: selectedVehicle.service.customerPhone),
+            InfoRow(label:S.of(context).payment_deadline,
+                value:selectedVehicle.service.paymentDue),
+            InfoRow(label:S.of(context).device, value:selectedVehicle.service.device),
             const SizedBox(height: 10),
-            _buildSectionTitle(S.of(context).manager),
-            _buildInfoRow(S.of(context).data_logging,
-                selectedVehicle.management.dataStorage),
-            _buildInfoRow(S.of(context).firmware_version,
-                selectedVehicle.management.firmwareVersion),
-            _buildInfoRow(S.of(context).gps_satellites,
-                '${selectedVehicle.management.gpsSlots}'),
-            _buildInfoRow(S.of(context).speed_limit,
-                '${selectedVehicle.management.currentSpeed}'),
+            SectionTitle(title: S.of(context).manager),
+            InfoRow(label:S.of(context).data_logging,
+                value:selectedVehicle.management.dataStorage),
+            InfoRow(label:S.of(context).firmware_version,
+                value:selectedVehicle.management.firmwareVersion),
+            InfoRow(label:S.of(context).gps_satellites,
+                value:selectedVehicle.management.gpsSlots),
+            InfoRow(label:S.of(context).speed_limit,
+                value:selectedVehicle.management.currentSpeed),
           ],
         ),
       ),
     );
   }
+}
 
-  Widget _buildInfoRow(String label, String value) {
+class InfoRow extends StatelessWidget {
+  final String label;
+  final String value;
+
+  const InfoRow({
+    super.key,
+    required this.label,
+    required this.value,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
@@ -72,11 +84,23 @@ class CarDetailScreen extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buildSectionTitle(String title) {
+class SectionTitle extends StatelessWidget {
+  final String title;
+
+  const SectionTitle({super.key, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
     return Text(
       title,
-      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      textAlign: TextAlign.center,
+      style: const TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 }
+
