@@ -25,7 +25,7 @@ class _LoginPageState extends BaseState<LoginPage> {
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
           if (state is LoginSuccessState) {
-            navigatorState.pushNamed(ScreenName.home);
+            navigatorState.pushReplacementNamed(ScreenName.home);
           }
         },
         builder: (context, state) {

@@ -1,42 +1,322 @@
 [
-{
-"id": "1600000014",
-"speed": "0 km/h",
-"days": "65 ngày",
-"address": "45 Đ. Lê Trọng Tấn, Dương Nội, Hà Đông, Hà Nội",
-"status": "Mất kết nối",
-"lastConnection": "2024-12-03 17:49:35",
-"remainingDays": "Còn 284 ngày đến hạn thanh toán",
-"trip": {
-"gps": "OK",
-"engine": "Tắt",
-"kmToday": "0 km",
-"totalKm": "26.3 km",
-"tripToday": "0p",
-"tripLatest": "0p",
-"overSpeed": "0 lần",
-"totalUsed": "0 lần",
-"battery": "11.85 VDC",
-"currentLocationTime": "65 ngày"
-},
-"driver": "Chưa đăng nhập",
-"service": {
-"customer": "testxm",
-"customerPhone": "Không rõ",
-"paymentDue": "2025-11-18",
-"installDate": "Không rõ",
-"device": "1600000014"
-},
-"management": {
-"dataStorage": "Không",
-"firmwareVersion": "33",
-"location": "20.985460, 105.742540",
-"gpsSlots": "9",
-"totalMessages": "12",
-"shockSensor": "Không",
-"suddenBrake": "Không",
-"currentSpeed": "120 km/h",
-"emergency": "Không"
-}
-}
+  {
+    "id": "1600000014",
+    "speed": "0 km/h",
+    "days": "65 ngày",
+    "address": "45 Đ. Lê Trọng Tấn, Dương Nội, Hà Đông, Hà Nội",
+    "status": "Mất kết nối",
+    "lastConnection": "2024-12-03 17:49:35",
+    "remainingDays": "Còn 284 ngày đến hạn thanh toán",
+    "trip": {
+      "gps": "OK",
+      "engine": "Tắt",
+      "kmToday": "0 km",
+      "totalKm": "26.3 km",
+      "tripToday": "0p",
+      "tripLatest": "0p",
+      "overSpeed": "0 lần",
+      "totalUsed": "0 lần",
+      "battery": "11.85 VDC",
+      "currentLocationTime": "65 ngày"
+    },
+    "driver": "Chưa đăng nhập",
+    "service": {
+      "customer": "testxm",
+      "customerPhone": "Không rõ",
+      "paymentDue": "2025-11-18",
+      "installDate": "Không rõ",
+      "device": "1600000014"
+    },
+    "management": {
+      "dataStorage": "Không",
+      "firmwareVersion": "33",
+      "location": "20.985460, 105.742540",
+      "gpsSlots": "9",
+      "totalMessages": "12",
+      "shockSensor": "Không",
+      "suddenBrake": "Không",
+      "currentSpeed": "120 km/h",
+      "emergency": "Không"
+    }
+  },
+  {
+    "id": "1600000015",
+    "speed": "15 km/h",
+    "days": "30 ngày",
+    "address": "Đường chưa đặt tên, An Khánh, Hoài Đức, Hà Nội",
+    "status": "Đang hoạt động",
+    "lastConnection": "2024-12-04 10:15:22",
+    "remainingDays": "Còn 150 ngày đến hạn thanh toán",
+    "trip": {
+      "gps": "OK",
+      "engine": "Bật",
+      "kmToday": "12 km",
+      "totalKm": "345.8 km",
+      "tripToday": "20p",
+      "tripLatest": "35p",
+      "overSpeed": "2 lần",
+      "totalUsed": "45 lần",
+      "battery": "12.10 VDC",
+      "currentLocationTime": "30 ngày"
+    },
+    "driver": "Nguyễn Văn A",
+    "service": {
+      "customer": "doanhnghiepX",
+      "customerPhone": "0987xxxxxx",
+      "paymentDue": "2025-06-10",
+      "installDate": "2023-05-12",
+      "device": "1600000015"
+    },
+    "management": {
+      "dataStorage": "Có",
+      "firmwareVersion": "35",
+      "location": "21.025760, 105.801944",
+      "gpsSlots": "10",
+      "totalMessages": "35",
+      "shockSensor": "Có",
+      "suddenBrake": "2 lần",
+      "currentSpeed": "15 km/h",
+      "emergency": "Không"
+    }
+  },
+  {
+    "id": "2900000003",
+    "speed": "5 km/h",
+    "days": "108 ngày",
+    "address": "Văn phòng Hà Đông, KĐT Geleximco, Đ. Lê Trọng Tấn, Dương Nội, Hà Đông, Hà Nội",
+    "status": "Đang chạy",
+    "lastConnection": "2024-12-01 09:30:00",
+    "remainingDays": "Còn 90 ngày đến hạn thanh toán",
+    "trip": {
+      "gps": "OK",
+      "engine": "Bật",
+      "kmToday": "5 km",
+      "totalKm": "98.5 km",
+      "tripToday": "10p",
+      "tripLatest": "18p",
+      "overSpeed": "1 lần",
+      "totalUsed": "20 lần",
+      "battery": "12.5 VDC",
+      "currentLocationTime": "108 ngày"
+    },
+    "driver": "Trần B",
+    "service": {
+      "customer": "công ty ABC",
+      "customerPhone": "0912xxxxxx",
+      "paymentDue": "2025-09-20",
+      "installDate": "2024-02-15",
+      "device": "2900000003"
+    },
+    "management": {
+      "dataStorage": "Có",
+      "firmwareVersion": "37",
+      "location": "20.991760, 105.799444",
+      "gpsSlots": "8",
+      "totalMessages": "22",
+      "shockSensor": "Không",
+      "suddenBrake": "1 lần",
+      "currentSpeed": "5 km/h",
+      "emergency": "Không"
+    }
+  },
+  {
+    "id": "2900000002",
+    "speed": "0 km/h",
+    "days": "45 ngày",
+    "address": "45 Đ. Lê Trọng Tấn, Dương Nội, Hà Đông, Hà Nội",
+    "status": "Dừng xe",
+    "lastConnection": "2024-12-02 12:00:00",
+    "remainingDays": "Còn 60 ngày đến hạn thanh toán",
+    "trip": {
+      "gps": "OK",
+      "engine": "Tắt",
+      "kmToday": "0 km",
+      "totalKm": "55.2 km",
+      "tripToday": "0p",
+      "tripLatest": "10p",
+      "overSpeed": "0 lần",
+      "totalUsed": "15 lần",
+      "battery": "11.95 VDC",
+      "currentLocationTime": "45 ngày"
+    },
+    "driver": "Không có tài xế",
+    "service": {
+      "customer": "testclient",
+      "customerPhone": "Không rõ",
+      "paymentDue": "2025-12-15",
+      "installDate": "2024-06-05",
+      "device": "2900000002"
+    },
+    "management": {
+      "dataStorage": "Không",
+      "firmwareVersion": "32",
+      "location": "20.985760, 105.795444",
+      "gpsSlots": "7",
+      "totalMessages": "10",
+      "shockSensor": "Không",
+      "suddenBrake": "Không",
+      "currentSpeed": "0 km/h",
+      "emergency": "Không"
+    }
+  },
+  {
+    "id": "1600000014",
+    "speed": "0 km/h",
+    "days": "65 ngày",
+    "address": "45 Đ. Lê Trọng Tấn, Dương Nội, Hà Đông, Hà Nội",
+    "status": "Mất kết nối",
+    "lastConnection": "2024-12-03 17:49:35",
+    "remainingDays": "Còn 284 ngày đến hạn thanh toán",
+    "trip": {
+      "gps": "OK",
+      "engine": "Tắt",
+      "kmToday": "0 km",
+      "totalKm": "26.3 km",
+      "tripToday": "0p",
+      "tripLatest": "0p",
+      "overSpeed": "0 lần",
+      "totalUsed": "0 lần",
+      "battery": "11.85 VDC",
+      "currentLocationTime": "65 ngày"
+    },
+    "driver": "Chưa đăng nhập",
+    "service": {
+      "customer": "testxm",
+      "customerPhone": "Không rõ",
+      "paymentDue": "2025-11-18",
+      "installDate": "Không rõ",
+      "device": "1600000014"
+    },
+    "management": {
+      "dataStorage": "Không",
+      "firmwareVersion": "33",
+      "location": "20.985460, 105.742540",
+      "gpsSlots": "9",
+      "totalMessages": "12",
+      "shockSensor": "Không",
+      "suddenBrake": "Không",
+      "currentSpeed": "120 km/h",
+      "emergency": "Không"
+    }
+  },
+  {
+    "id": "1600000015",
+    "speed": "15 km/h",
+    "days": "30 ngày",
+    "address": "Đường chưa đặt tên, An Khánh, Hoài Đức, Hà Nội",
+    "status": "Đang hoạt động",
+    "lastConnection": "2024-12-04 10:15:22",
+    "remainingDays": "Còn 150 ngày đến hạn thanh toán",
+    "trip": {
+      "gps": "OK",
+      "engine": "Bật",
+      "kmToday": "12 km",
+      "totalKm": "345.8 km",
+      "tripToday": "20p",
+      "tripLatest": "35p",
+      "overSpeed": "2 lần",
+      "totalUsed": "45 lần",
+      "battery": "12.10 VDC",
+      "currentLocationTime": "30 ngày"
+    },
+    "driver": "Nguyễn Văn A",
+    "service": {
+      "customer": "doanhnghiepX",
+      "customerPhone": "0987xxxxxx",
+      "paymentDue": "2025-06-10",
+      "installDate": "2023-05-12",
+      "device": "1600000015"
+    },
+    "management": {
+      "dataStorage": "Có",
+      "firmwareVersion": "35",
+      "location": "21.025760, 105.801944",
+      "gpsSlots": "10",
+      "totalMessages": "35",
+      "shockSensor": "Có",
+      "suddenBrake": "2 lần",
+      "currentSpeed": "15 km/h",
+      "emergency": "Không"
+    }
+  },
+  {
+    "id": "2900000003",
+    "speed": "5 km/h",
+    "days": "108 ngày",
+    "address": "Văn phòng Hà Đông, KĐT Geleximco, Đ. Lê Trọng Tấn, Dương Nội, Hà Đông, Hà Nội",
+    "status": "Đang chạy",
+    "lastConnection": "2024-12-01 09:30:00",
+    "remainingDays": "Còn 90 ngày đến hạn thanh toán",
+    "trip": {
+      "gps": "OK",
+      "engine": "Bật",
+      "kmToday": "5 km",
+      "totalKm": "98.5 km",
+      "tripToday": "10p",
+      "tripLatest": "18p",
+      "overSpeed": "1 lần",
+      "totalUsed": "20 lần",
+      "battery": "12.5 VDC",
+      "currentLocationTime": "108 ngày"
+    },
+    "driver": "Trần B",
+    "service": {
+      "customer": "công ty ABC",
+      "customerPhone": "0912xxxxxx",
+      "paymentDue": "2025-09-20",
+      "installDate": "2024-02-15",
+      "device": "2900000003"
+    },
+    "management": {
+      "dataStorage": "Có",
+      "firmwareVersion": "37",
+      "location": "20.991760, 105.799444",
+      "gpsSlots": "8",
+      "totalMessages": "22",
+      "shockSensor": "Không",
+      "suddenBrake": "1 lần",
+      "currentSpeed": "5 km/h",
+      "emergency": "Không"
+    }
+  },
+  {
+    "id": "2900000002",
+    "speed": "0 km/h",
+    "days": "45 ngày",
+    "address": "45 Đ. Lê Trọng Tấn, Dương Nội, Hà Đông, Hà Nội",
+    "status": "Dừng xe",
+    "lastConnection": "2024-12-02 12:00:00",
+    "remainingDays": "Còn 60 ngày đến hạn thanh toán",
+    "trip": {
+      "gps": "OK",
+      "engine": "Tắt",
+      "kmToday": "0 km",
+      "totalKm": "55.2 km",
+      "tripToday": "0p",
+      "tripLatest": "10p",
+      "overSpeed": "0 lần",
+      "totalUsed": "15 lần",
+      "battery": "11.95 VDC",
+      "currentLocationTime": "45 ngày"
+    },
+    "driver": "Không có tài xế",
+    "service": {
+      "customer": "testclient",
+      "customerPhone": "Không rõ",
+      "paymentDue": "2025-12-15",
+      "installDate": "2024-06-05",
+      "device": "2900000002"
+    },
+    "management": {
+      "dataStorage": "Không",
+      "firmwareVersion": "32",
+      "location": "20.985760, 105.795444",
+      "gpsSlots": "7",
+      "totalMessages": "10",
+      "shockSensor": "Không",
+      "suddenBrake": "Không",
+      "currentSpeed": "0 km/h",
+      "emergency": "Không"
+    }
+  }
 ]

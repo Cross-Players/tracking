@@ -3,6 +3,7 @@ import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:gps/presentation/feature/home/home_page.dart';
 import 'package:gps/presentation/feature/login/login_page.dart';
+import 'package:gps/presentation/feature/monitor/monitor_page.dart';
 import 'package:gps/presentation/widget/empty_page.dart';
 import 'package:injectable/injectable.dart';
 import 'package:gps/presentation/defination/string.dart';
@@ -22,6 +23,9 @@ class AppRoute {
       case ScreenName.login:
         html.window.history.pushState("", "", "/login");
         return _materialPage(const LoginPage(), settings);
+      case ScreenName.tracking:
+        html.window.history.pushState("", "", "/monitor");
+        return _materialPage(const MonitorPage(), settings);
       case ScreenName.home:
         html.window.history.pushState("", "", "/home");
         return _materialPage(const HomePage(), settings);
