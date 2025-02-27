@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gps/presentation/defination/string.dart';
+import 'package:gps/presentation/definition/string.dart';
 import 'package:gps/presentation/di/di.dart';
 import 'package:gps/presentation/feature/login/bloc/login_cubit.dart';
 import 'package:gps/presentation/feature/login/bloc/login_state.dart';
@@ -30,21 +30,15 @@ class _LoginPageState extends BaseState<LoginPage> {
         },
         builder: (context, state) {
           if (state is LoginLoadingState) {
-            return _buildLoadingWidget();
+            return const CircularProgressIndicator();
           } else {
             return LoginForm(
-              isError: state is LoginErrorState,
               cubit: _cubit,
+              isError: state is LoginErrorState,
             );
           }
         },
       ),
-    );
-  }
-
-  Widget _buildLoadingWidget() {
-    return const Center(
-      child: CircularProgressIndicator(),
     );
   }
 }
