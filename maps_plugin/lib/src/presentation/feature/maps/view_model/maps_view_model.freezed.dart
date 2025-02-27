@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$MapsViewModel {
   MapType get mapType => throw _privateConstructorUsedError;
+  List<MapsMarkerViewModel> get markers => throw _privateConstructorUsedError;
 
   /// Create a copy of MapsViewModel
   /// with the given fields replaced by the non-null parameter values.
@@ -31,7 +32,7 @@ abstract class $MapsViewModelCopyWith<$Res> {
           MapsViewModel value, $Res Function(MapsViewModel) then) =
       _$MapsViewModelCopyWithImpl<$Res, MapsViewModel>;
   @useResult
-  $Res call({MapType mapType});
+  $Res call({MapType mapType, List<MapsMarkerViewModel> markers});
 }
 
 /// @nodoc
@@ -50,12 +51,17 @@ class _$MapsViewModelCopyWithImpl<$Res, $Val extends MapsViewModel>
   @override
   $Res call({
     Object? mapType = null,
+    Object? markers = null,
   }) {
     return _then(_value.copyWith(
       mapType: null == mapType
           ? _value.mapType
           : mapType // ignore: cast_nullable_to_non_nullable
               as MapType,
+      markers: null == markers
+          ? _value.markers
+          : markers // ignore: cast_nullable_to_non_nullable
+              as List<MapsMarkerViewModel>,
     ) as $Val);
   }
 }
@@ -68,7 +74,7 @@ abstract class _$$MapsViewModelImplCopyWith<$Res>
       __$$MapsViewModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({MapType mapType});
+  $Res call({MapType mapType, List<MapsMarkerViewModel> markers});
 }
 
 /// @nodoc
@@ -85,12 +91,17 @@ class __$$MapsViewModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? mapType = null,
+    Object? markers = null,
   }) {
     return _then(_$MapsViewModelImpl(
       mapType: null == mapType
           ? _value.mapType
           : mapType // ignore: cast_nullable_to_non_nullable
               as MapType,
+      markers: null == markers
+          ? _value._markers
+          : markers // ignore: cast_nullable_to_non_nullable
+              as List<MapsMarkerViewModel>,
     ));
   }
 }
@@ -98,15 +109,27 @@ class __$$MapsViewModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MapsViewModelImpl extends _MapsViewModel {
-  const _$MapsViewModelImpl({this.mapType = MapType.normal}) : super._();
+  const _$MapsViewModelImpl(
+      {this.mapType = MapType.normal,
+      final List<MapsMarkerViewModel> markers = const <MapsMarkerViewModel>[]})
+      : _markers = markers,
+        super._();
 
   @override
   @JsonKey()
   final MapType mapType;
+  final List<MapsMarkerViewModel> _markers;
+  @override
+  @JsonKey()
+  List<MapsMarkerViewModel> get markers {
+    if (_markers is EqualUnmodifiableListView) return _markers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_markers);
+  }
 
   @override
   String toString() {
-    return 'MapsViewModel(mapType: $mapType)';
+    return 'MapsViewModel(mapType: $mapType, markers: $markers)';
   }
 
   @override
@@ -114,11 +137,13 @@ class _$MapsViewModelImpl extends _MapsViewModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MapsViewModelImpl &&
-            (identical(other.mapType, mapType) || other.mapType == mapType));
+            (identical(other.mapType, mapType) || other.mapType == mapType) &&
+            const DeepCollectionEquality().equals(other._markers, _markers));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, mapType);
+  int get hashCode => Object.hash(
+      runtimeType, mapType, const DeepCollectionEquality().hash(_markers));
 
   /// Create a copy of MapsViewModel
   /// with the given fields replaced by the non-null parameter values.
@@ -130,11 +155,15 @@ class _$MapsViewModelImpl extends _MapsViewModel {
 }
 
 abstract class _MapsViewModel extends MapsViewModel {
-  const factory _MapsViewModel({final MapType mapType}) = _$MapsViewModelImpl;
+  const factory _MapsViewModel(
+      {final MapType mapType,
+      final List<MapsMarkerViewModel> markers}) = _$MapsViewModelImpl;
   const _MapsViewModel._() : super._();
 
   @override
   MapType get mapType;
+  @override
+  List<MapsMarkerViewModel> get markers;
 
   /// Create a copy of MapsViewModel
   /// with the given fields replaced by the non-null parameter values.

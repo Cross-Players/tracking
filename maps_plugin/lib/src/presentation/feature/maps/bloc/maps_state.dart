@@ -17,6 +17,10 @@ abstract class MapsState with _$MapsState {
     @Default(true) bool shouldShowLoading,
   }) = MapsLoadingState;
 
+  const factory MapsState.mapsChangedMarkerState({
+    @Default(MapsViewModel()) MapsViewModel viewModel,
+  }) = MapsChangedMarkerState;
+
   const factory MapsState.mapsErrorState({
     @Default(MapsViewModel()) MapsViewModel viewModel,
     @Default(BaseException()) BaseException exception,
