@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gps/presentation/defination/string.dart';
+import 'package:gps/presentation/definition/string.dart';
 import 'package:gps/presentation/route/route.dart';
 import 'package:gps/generated/l10n.dart';
 
@@ -7,15 +7,15 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
 
   @override
-  _CustomAppBarState createState() {
-    return _CustomAppBarState();
+  CustomAppBarState createState() {
+    return CustomAppBarState();
   }
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
-class _CustomAppBarState extends State<CustomAppBar> {
+class CustomAppBarState extends State<CustomAppBar> {
   String username = "User 01";
   @override
   Widget build(BuildContext context) {
@@ -49,24 +49,38 @@ class _CustomAppBarState extends State<CustomAppBar> {
         ],
       ),
       actions: [
-        _buildAppBarButton(Icons.map, S.of(context).monitor, onTap: () {
+        AppBarButton(icon: Icons.map, label: S.of(context).monitor, onTap: () {
           navigatorState.pushReplacementNamed(ScreenName.tracking);
         }),
-        _buildAppBarButton(Icons.description, 'QCVN31/2014', onTap: () {}),
-        _buildAppBarButton(Icons.article, 'TT09/2015', onTap: () {}),
-        _buildAppBarButton(Icons.document_scanner, 'Báo cáo doanh nghiệp',
+        AppBarButton(icon: Icons.description,label : 'QCVN31/2014', onTap: () {}),
+        AppBarButton(icon: Icons.article,label: 'TT09/2015', onTap: () {}),
+        AppBarButton(icon: Icons.document_scanner, label: 'Báo cáo doanh nghiệp',
             onTap: () {}),
-        _buildAppBarButton(Icons.table_chart, 'Quản lý', onTap: () {}),
-        _buildAppBarButton(Icons.person, username, onTap: () {}),
+        AppBarButton(icon: Icons.table_chart, label: 'Quản lý', onTap: () {}),
+        AppBarButton(icon: Icons.person, label: username, onTap: () {}),
       ],
     );
   }
 }
 
-Widget _buildAppBarButton(IconData icon, String label, {VoidCallback? onTap}) {
-  return TextButton.icon(
-    onPressed: onTap,
-    icon: Icon(icon, color: Colors.white),
-    label: Text(label, style: const TextStyle(color: Colors.white)),
-  );
+class AppBarButton extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback? onTap;
+
+  const AppBarButton({
+    super.key,
+    required this.icon,
+    required this.label,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton.icon(
+      onPressed: onTap,
+      icon: Icon(icon, color: Colors.white),
+      label: Text(label, style: const TextStyle(color: Colors.white)),
+    );
+  }
 }

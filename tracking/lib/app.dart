@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gps/generated/l10n.dart';
-import 'package:gps/presentation/defination/string.dart';
+import 'package:gps/presentation/definition/string.dart';
 import 'package:gps/presentation/di/di.dart';
 import 'package:gps/presentation/route/route.dart';
 import 'package:gps/presentation/utils/app_log_util.dart';

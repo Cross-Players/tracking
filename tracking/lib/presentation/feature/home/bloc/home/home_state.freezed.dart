@@ -19,54 +19,54 @@ mixin _$HomeState {
   HomeViewModel get viewModel => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HomeViewModel viewModel) HomeInitialState,
-    required TResult Function(HomeViewModel viewModel) HomeLoadingState,
+    required TResult Function(HomeViewModel viewModel) homeInitialState,
+    required TResult Function(HomeViewModel viewModel) homeLoadingState,
     required TResult Function(HomeViewModel viewModel) selectedVehicleState,
     required TResult Function(HomeViewModel viewModel, BaseException exception)
-        HomeErrorState,
+        homeErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(HomeViewModel viewModel)? HomeInitialState,
-    TResult? Function(HomeViewModel viewModel)? HomeLoadingState,
+    TResult? Function(HomeViewModel viewModel)? homeInitialState,
+    TResult? Function(HomeViewModel viewModel)? homeLoadingState,
     TResult? Function(HomeViewModel viewModel)? selectedVehicleState,
     TResult? Function(HomeViewModel viewModel, BaseException exception)?
-        HomeErrorState,
+        homeErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HomeViewModel viewModel)? HomeInitialState,
-    TResult Function(HomeViewModel viewModel)? HomeLoadingState,
+    TResult Function(HomeViewModel viewModel)? homeInitialState,
+    TResult Function(HomeViewModel viewModel)? homeLoadingState,
     TResult Function(HomeViewModel viewModel)? selectedVehicleState,
     TResult Function(HomeViewModel viewModel, BaseException exception)?
-        HomeErrorState,
+        homeErrorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeInitialState value) HomeInitialState,
-    required TResult Function(HomeLoadingState value) HomeLoadingState,
+    required TResult Function(HomeInitialState value) homeInitialState,
+    required TResult Function(HomeLoadingState value) homeLoadingState,
     required TResult Function(SelectedVehicleState value) selectedVehicleState,
-    required TResult Function(HomeErrorState value) HomeErrorState,
+    required TResult Function(HomeErrorState value) homeErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HomeInitialState value)? HomeInitialState,
-    TResult? Function(HomeLoadingState value)? HomeLoadingState,
+    TResult? Function(HomeInitialState value)? homeInitialState,
+    TResult? Function(HomeLoadingState value)? homeLoadingState,
     TResult? Function(SelectedVehicleState value)? selectedVehicleState,
-    TResult? Function(HomeErrorState value)? HomeErrorState,
+    TResult? Function(HomeErrorState value)? homeErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeInitialState value)? HomeInitialState,
-    TResult Function(HomeLoadingState value)? HomeLoadingState,
+    TResult Function(HomeInitialState value)? homeInitialState,
+    TResult Function(HomeLoadingState value)? homeLoadingState,
     TResult Function(SelectedVehicleState value)? selectedVehicleState,
-    TResult Function(HomeErrorState value)? HomeErrorState,
+    TResult Function(HomeErrorState value)? homeErrorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -174,7 +174,7 @@ class _$HomeInitialStateImpl extends HomeInitialState {
 
   @override
   String toString() {
-    return 'HomeState.HomeInitialState(viewModel: $viewModel)';
+    return 'HomeState.homeInitialState(viewModel: $viewModel)';
   }
 
   @override
@@ -201,39 +201,39 @@ class _$HomeInitialStateImpl extends HomeInitialState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HomeViewModel viewModel) HomeInitialState,
-    required TResult Function(HomeViewModel viewModel) HomeLoadingState,
+    required TResult Function(HomeViewModel viewModel) homeInitialState,
+    required TResult Function(HomeViewModel viewModel) homeLoadingState,
     required TResult Function(HomeViewModel viewModel) selectedVehicleState,
     required TResult Function(HomeViewModel viewModel, BaseException exception)
-        HomeErrorState,
+        homeErrorState,
   }) {
-    return HomeInitialState(viewModel);
+    return homeInitialState(viewModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(HomeViewModel viewModel)? HomeInitialState,
-    TResult? Function(HomeViewModel viewModel)? HomeLoadingState,
+    TResult? Function(HomeViewModel viewModel)? homeInitialState,
+    TResult? Function(HomeViewModel viewModel)? homeLoadingState,
     TResult? Function(HomeViewModel viewModel)? selectedVehicleState,
     TResult? Function(HomeViewModel viewModel, BaseException exception)?
-        HomeErrorState,
+        homeErrorState,
   }) {
-    return HomeInitialState?.call(viewModel);
+    return homeInitialState?.call(viewModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HomeViewModel viewModel)? HomeInitialState,
-    TResult Function(HomeViewModel viewModel)? HomeLoadingState,
+    TResult Function(HomeViewModel viewModel)? homeInitialState,
+    TResult Function(HomeViewModel viewModel)? homeLoadingState,
     TResult Function(HomeViewModel viewModel)? selectedVehicleState,
     TResult Function(HomeViewModel viewModel, BaseException exception)?
-        HomeErrorState,
+        homeErrorState,
     required TResult orElse(),
   }) {
-    if (HomeInitialState != null) {
-      return HomeInitialState(viewModel);
+    if (homeInitialState != null) {
+      return homeInitialState(viewModel);
     }
     return orElse();
   }
@@ -241,36 +241,36 @@ class _$HomeInitialStateImpl extends HomeInitialState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeInitialState value) HomeInitialState,
-    required TResult Function(HomeLoadingState value) HomeLoadingState,
+    required TResult Function(HomeInitialState value) homeInitialState,
+    required TResult Function(HomeLoadingState value) homeLoadingState,
     required TResult Function(SelectedVehicleState value) selectedVehicleState,
-    required TResult Function(HomeErrorState value) HomeErrorState,
+    required TResult Function(HomeErrorState value) homeErrorState,
   }) {
-    return HomeInitialState(this);
+    return homeInitialState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HomeInitialState value)? HomeInitialState,
-    TResult? Function(HomeLoadingState value)? HomeLoadingState,
+    TResult? Function(HomeInitialState value)? homeInitialState,
+    TResult? Function(HomeLoadingState value)? homeLoadingState,
     TResult? Function(SelectedVehicleState value)? selectedVehicleState,
-    TResult? Function(HomeErrorState value)? HomeErrorState,
+    TResult? Function(HomeErrorState value)? homeErrorState,
   }) {
-    return HomeInitialState?.call(this);
+    return homeInitialState?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeInitialState value)? HomeInitialState,
-    TResult Function(HomeLoadingState value)? HomeLoadingState,
+    TResult Function(HomeInitialState value)? homeInitialState,
+    TResult Function(HomeLoadingState value)? homeLoadingState,
     TResult Function(SelectedVehicleState value)? selectedVehicleState,
-    TResult Function(HomeErrorState value)? HomeErrorState,
+    TResult Function(HomeErrorState value)? homeErrorState,
     required TResult orElse(),
   }) {
-    if (HomeInitialState != null) {
-      return HomeInitialState(this);
+    if (homeInitialState != null) {
+      return homeInitialState(this);
     }
     return orElse();
   }
@@ -342,7 +342,7 @@ class _$HomeLoadingStateImpl extends HomeLoadingState {
 
   @override
   String toString() {
-    return 'HomeState.HomeLoadingState(viewModel: $viewModel)';
+    return 'HomeState.homeLoadingState(viewModel: $viewModel)';
   }
 
   @override
@@ -369,39 +369,39 @@ class _$HomeLoadingStateImpl extends HomeLoadingState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HomeViewModel viewModel) HomeInitialState,
-    required TResult Function(HomeViewModel viewModel) HomeLoadingState,
+    required TResult Function(HomeViewModel viewModel) homeInitialState,
+    required TResult Function(HomeViewModel viewModel) homeLoadingState,
     required TResult Function(HomeViewModel viewModel) selectedVehicleState,
     required TResult Function(HomeViewModel viewModel, BaseException exception)
-        HomeErrorState,
+        homeErrorState,
   }) {
-    return HomeLoadingState(viewModel);
+    return homeLoadingState(viewModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(HomeViewModel viewModel)? HomeInitialState,
-    TResult? Function(HomeViewModel viewModel)? HomeLoadingState,
+    TResult? Function(HomeViewModel viewModel)? homeInitialState,
+    TResult? Function(HomeViewModel viewModel)? homeLoadingState,
     TResult? Function(HomeViewModel viewModel)? selectedVehicleState,
     TResult? Function(HomeViewModel viewModel, BaseException exception)?
-        HomeErrorState,
+        homeErrorState,
   }) {
-    return HomeLoadingState?.call(viewModel);
+    return homeLoadingState?.call(viewModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HomeViewModel viewModel)? HomeInitialState,
-    TResult Function(HomeViewModel viewModel)? HomeLoadingState,
+    TResult Function(HomeViewModel viewModel)? homeInitialState,
+    TResult Function(HomeViewModel viewModel)? homeLoadingState,
     TResult Function(HomeViewModel viewModel)? selectedVehicleState,
     TResult Function(HomeViewModel viewModel, BaseException exception)?
-        HomeErrorState,
+        homeErrorState,
     required TResult orElse(),
   }) {
-    if (HomeLoadingState != null) {
-      return HomeLoadingState(viewModel);
+    if (homeLoadingState != null) {
+      return homeLoadingState(viewModel);
     }
     return orElse();
   }
@@ -409,36 +409,36 @@ class _$HomeLoadingStateImpl extends HomeLoadingState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeInitialState value) HomeInitialState,
-    required TResult Function(HomeLoadingState value) HomeLoadingState,
+    required TResult Function(HomeInitialState value) homeInitialState,
+    required TResult Function(HomeLoadingState value) homeLoadingState,
     required TResult Function(SelectedVehicleState value) selectedVehicleState,
-    required TResult Function(HomeErrorState value) HomeErrorState,
+    required TResult Function(HomeErrorState value) homeErrorState,
   }) {
-    return HomeLoadingState(this);
+    return homeLoadingState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HomeInitialState value)? HomeInitialState,
-    TResult? Function(HomeLoadingState value)? HomeLoadingState,
+    TResult? Function(HomeInitialState value)? homeInitialState,
+    TResult? Function(HomeLoadingState value)? homeLoadingState,
     TResult? Function(SelectedVehicleState value)? selectedVehicleState,
-    TResult? Function(HomeErrorState value)? HomeErrorState,
+    TResult? Function(HomeErrorState value)? homeErrorState,
   }) {
-    return HomeLoadingState?.call(this);
+    return homeLoadingState?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeInitialState value)? HomeInitialState,
-    TResult Function(HomeLoadingState value)? HomeLoadingState,
+    TResult Function(HomeInitialState value)? homeInitialState,
+    TResult Function(HomeLoadingState value)? homeLoadingState,
     TResult Function(SelectedVehicleState value)? selectedVehicleState,
-    TResult Function(HomeErrorState value)? HomeErrorState,
+    TResult Function(HomeErrorState value)? homeErrorState,
     required TResult orElse(),
   }) {
-    if (HomeLoadingState != null) {
-      return HomeLoadingState(this);
+    if (homeLoadingState != null) {
+      return homeLoadingState(this);
     }
     return orElse();
   }
@@ -538,11 +538,11 @@ class _$SelectedVehicleStateImpl extends SelectedVehicleState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HomeViewModel viewModel) HomeInitialState,
-    required TResult Function(HomeViewModel viewModel) HomeLoadingState,
+    required TResult Function(HomeViewModel viewModel) homeInitialState,
+    required TResult Function(HomeViewModel viewModel) homeLoadingState,
     required TResult Function(HomeViewModel viewModel) selectedVehicleState,
     required TResult Function(HomeViewModel viewModel, BaseException exception)
-        HomeErrorState,
+        homeErrorState,
   }) {
     return selectedVehicleState(viewModel);
   }
@@ -550,11 +550,11 @@ class _$SelectedVehicleStateImpl extends SelectedVehicleState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(HomeViewModel viewModel)? HomeInitialState,
-    TResult? Function(HomeViewModel viewModel)? HomeLoadingState,
+    TResult? Function(HomeViewModel viewModel)? homeInitialState,
+    TResult? Function(HomeViewModel viewModel)? homeLoadingState,
     TResult? Function(HomeViewModel viewModel)? selectedVehicleState,
     TResult? Function(HomeViewModel viewModel, BaseException exception)?
-        HomeErrorState,
+        homeErrorState,
   }) {
     return selectedVehicleState?.call(viewModel);
   }
@@ -562,11 +562,11 @@ class _$SelectedVehicleStateImpl extends SelectedVehicleState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HomeViewModel viewModel)? HomeInitialState,
-    TResult Function(HomeViewModel viewModel)? HomeLoadingState,
+    TResult Function(HomeViewModel viewModel)? homeInitialState,
+    TResult Function(HomeViewModel viewModel)? homeLoadingState,
     TResult Function(HomeViewModel viewModel)? selectedVehicleState,
     TResult Function(HomeViewModel viewModel, BaseException exception)?
-        HomeErrorState,
+        homeErrorState,
     required TResult orElse(),
   }) {
     if (selectedVehicleState != null) {
@@ -578,10 +578,10 @@ class _$SelectedVehicleStateImpl extends SelectedVehicleState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeInitialState value) HomeInitialState,
-    required TResult Function(HomeLoadingState value) HomeLoadingState,
+    required TResult Function(HomeInitialState value) homeInitialState,
+    required TResult Function(HomeLoadingState value) homeLoadingState,
     required TResult Function(SelectedVehicleState value) selectedVehicleState,
-    required TResult Function(HomeErrorState value) HomeErrorState,
+    required TResult Function(HomeErrorState value) homeErrorState,
   }) {
     return selectedVehicleState(this);
   }
@@ -589,10 +589,10 @@ class _$SelectedVehicleStateImpl extends SelectedVehicleState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HomeInitialState value)? HomeInitialState,
-    TResult? Function(HomeLoadingState value)? HomeLoadingState,
+    TResult? Function(HomeInitialState value)? homeInitialState,
+    TResult? Function(HomeLoadingState value)? homeLoadingState,
     TResult? Function(SelectedVehicleState value)? selectedVehicleState,
-    TResult? Function(HomeErrorState value)? HomeErrorState,
+    TResult? Function(HomeErrorState value)? homeErrorState,
   }) {
     return selectedVehicleState?.call(this);
   }
@@ -600,10 +600,10 @@ class _$SelectedVehicleStateImpl extends SelectedVehicleState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeInitialState value)? HomeInitialState,
-    TResult Function(HomeLoadingState value)? HomeLoadingState,
+    TResult Function(HomeInitialState value)? homeInitialState,
+    TResult Function(HomeLoadingState value)? homeLoadingState,
     TResult Function(SelectedVehicleState value)? selectedVehicleState,
-    TResult Function(HomeErrorState value)? HomeErrorState,
+    TResult Function(HomeErrorState value)? homeErrorState,
     required TResult orElse(),
   }) {
     if (selectedVehicleState != null) {
@@ -700,7 +700,7 @@ class _$HomeErrorStateImpl extends HomeErrorState {
 
   @override
   String toString() {
-    return 'HomeState.HomeErrorState(viewModel: $viewModel, exception: $exception)';
+    return 'HomeState.homeErrorState(viewModel: $viewModel, exception: $exception)';
   }
 
   @override
@@ -729,39 +729,39 @@ class _$HomeErrorStateImpl extends HomeErrorState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HomeViewModel viewModel) HomeInitialState,
-    required TResult Function(HomeViewModel viewModel) HomeLoadingState,
+    required TResult Function(HomeViewModel viewModel) homeInitialState,
+    required TResult Function(HomeViewModel viewModel) homeLoadingState,
     required TResult Function(HomeViewModel viewModel) selectedVehicleState,
     required TResult Function(HomeViewModel viewModel, BaseException exception)
-        HomeErrorState,
+        homeErrorState,
   }) {
-    return HomeErrorState(viewModel, exception);
+    return homeErrorState(viewModel, exception);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(HomeViewModel viewModel)? HomeInitialState,
-    TResult? Function(HomeViewModel viewModel)? HomeLoadingState,
+    TResult? Function(HomeViewModel viewModel)? homeInitialState,
+    TResult? Function(HomeViewModel viewModel)? homeLoadingState,
     TResult? Function(HomeViewModel viewModel)? selectedVehicleState,
     TResult? Function(HomeViewModel viewModel, BaseException exception)?
-        HomeErrorState,
+        homeErrorState,
   }) {
-    return HomeErrorState?.call(viewModel, exception);
+    return homeErrorState?.call(viewModel, exception);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HomeViewModel viewModel)? HomeInitialState,
-    TResult Function(HomeViewModel viewModel)? HomeLoadingState,
+    TResult Function(HomeViewModel viewModel)? homeInitialState,
+    TResult Function(HomeViewModel viewModel)? homeLoadingState,
     TResult Function(HomeViewModel viewModel)? selectedVehicleState,
     TResult Function(HomeViewModel viewModel, BaseException exception)?
-        HomeErrorState,
+        homeErrorState,
     required TResult orElse(),
   }) {
-    if (HomeErrorState != null) {
-      return HomeErrorState(viewModel, exception);
+    if (homeErrorState != null) {
+      return homeErrorState(viewModel, exception);
     }
     return orElse();
   }
@@ -769,36 +769,36 @@ class _$HomeErrorStateImpl extends HomeErrorState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeInitialState value) HomeInitialState,
-    required TResult Function(HomeLoadingState value) HomeLoadingState,
+    required TResult Function(HomeInitialState value) homeInitialState,
+    required TResult Function(HomeLoadingState value) homeLoadingState,
     required TResult Function(SelectedVehicleState value) selectedVehicleState,
-    required TResult Function(HomeErrorState value) HomeErrorState,
+    required TResult Function(HomeErrorState value) homeErrorState,
   }) {
-    return HomeErrorState(this);
+    return homeErrorState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(HomeInitialState value)? HomeInitialState,
-    TResult? Function(HomeLoadingState value)? HomeLoadingState,
+    TResult? Function(HomeInitialState value)? homeInitialState,
+    TResult? Function(HomeLoadingState value)? homeLoadingState,
     TResult? Function(SelectedVehicleState value)? selectedVehicleState,
-    TResult? Function(HomeErrorState value)? HomeErrorState,
+    TResult? Function(HomeErrorState value)? homeErrorState,
   }) {
-    return HomeErrorState?.call(this);
+    return homeErrorState?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeInitialState value)? HomeInitialState,
-    TResult Function(HomeLoadingState value)? HomeLoadingState,
+    TResult Function(HomeInitialState value)? homeInitialState,
+    TResult Function(HomeLoadingState value)? homeLoadingState,
     TResult Function(SelectedVehicleState value)? selectedVehicleState,
-    TResult Function(HomeErrorState value)? HomeErrorState,
+    TResult Function(HomeErrorState value)? homeErrorState,
     required TResult orElse(),
   }) {
-    if (HomeErrorState != null) {
-      return HomeErrorState(this);
+    if (homeErrorState != null) {
+      return homeErrorState(this);
     }
     return orElse();
   }

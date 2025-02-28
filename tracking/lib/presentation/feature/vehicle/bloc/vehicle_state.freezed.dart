@@ -16,31 +16,32 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$VehicleState {
+  VehicleViewModel get viewModel => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() vehicleInitialState,
-    required TResult Function() vehicleLoadingState,
-    required TResult Function(List<VehicleStatus> vehicles) vehicleLoadedState,
+    required TResult Function(VehicleViewModel viewModel) vehicleInitialState,
+    required TResult Function(VehicleViewModel viewModel) vehicleLoadingState,
+    required TResult Function(VehicleViewModel viewModel) vehicleLoadedState,
     required TResult Function(
-            List<VehicleStatus> viewModel, BaseException exception)
+            VehicleViewModel viewModel, BaseException exception)
         vehicleErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? vehicleInitialState,
-    TResult? Function()? vehicleLoadingState,
-    TResult? Function(List<VehicleStatus> vehicles)? vehicleLoadedState,
-    TResult? Function(List<VehicleStatus> viewModel, BaseException exception)?
+    TResult? Function(VehicleViewModel viewModel)? vehicleInitialState,
+    TResult? Function(VehicleViewModel viewModel)? vehicleLoadingState,
+    TResult? Function(VehicleViewModel viewModel)? vehicleLoadedState,
+    TResult? Function(VehicleViewModel viewModel, BaseException exception)?
         vehicleErrorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? vehicleInitialState,
-    TResult Function()? vehicleLoadingState,
-    TResult Function(List<VehicleStatus> vehicles)? vehicleLoadedState,
-    TResult Function(List<VehicleStatus> viewModel, BaseException exception)?
+    TResult Function(VehicleViewModel viewModel)? vehicleInitialState,
+    TResult Function(VehicleViewModel viewModel)? vehicleLoadingState,
+    TResult Function(VehicleViewModel viewModel)? vehicleLoadedState,
+    TResult Function(VehicleViewModel viewModel, BaseException exception)?
         vehicleErrorState,
     required TResult orElse(),
   }) =>
@@ -70,6 +71,12 @@ mixin _$VehicleState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Create a copy of VehicleState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $VehicleStateCopyWith<VehicleState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -77,6 +84,10 @@ abstract class $VehicleStateCopyWith<$Res> {
   factory $VehicleStateCopyWith(
           VehicleState value, $Res Function(VehicleState) then) =
       _$VehicleStateCopyWithImpl<$Res, VehicleState>;
+  @useResult
+  $Res call({VehicleViewModel viewModel});
+
+  $VehicleViewModelCopyWith<$Res> get viewModel;
 }
 
 /// @nodoc
@@ -91,13 +102,42 @@ class _$VehicleStateCopyWithImpl<$Res, $Val extends VehicleState>
 
   /// Create a copy of VehicleState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewModel = null,
+  }) {
+    return _then(_value.copyWith(
+      viewModel: null == viewModel
+          ? _value.viewModel
+          : viewModel // ignore: cast_nullable_to_non_nullable
+              as VehicleViewModel,
+    ) as $Val);
+  }
+
+  /// Create a copy of VehicleState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $VehicleViewModelCopyWith<$Res> get viewModel {
+    return $VehicleViewModelCopyWith<$Res>(_value.viewModel, (value) {
+      return _then(_value.copyWith(viewModel: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$VehicleInitialStateImplCopyWith<$Res> {
+abstract class _$$VehicleInitialStateImplCopyWith<$Res>
+    implements $VehicleStateCopyWith<$Res> {
   factory _$$VehicleInitialStateImplCopyWith(_$VehicleInitialStateImpl value,
           $Res Function(_$VehicleInitialStateImpl) then) =
       __$$VehicleInitialStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({VehicleViewModel viewModel});
+
+  @override
+  $VehicleViewModelCopyWith<$Res> get viewModel;
 }
 
 /// @nodoc
@@ -110,65 +150,93 @@ class __$$VehicleInitialStateImplCopyWithImpl<$Res>
 
   /// Create a copy of VehicleState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewModel = null,
+  }) {
+    return _then(_$VehicleInitialStateImpl(
+      viewModel: null == viewModel
+          ? _value.viewModel
+          : viewModel // ignore: cast_nullable_to_non_nullable
+              as VehicleViewModel,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$VehicleInitialStateImpl extends VehicleInitialState {
-  const _$VehicleInitialStateImpl() : super._();
+  const _$VehicleInitialStateImpl({this.viewModel = const VehicleViewModel()})
+      : super._();
+
+  @override
+  @JsonKey()
+  final VehicleViewModel viewModel;
 
   @override
   String toString() {
-    return 'VehicleState.vehicleInitialState()';
+    return 'VehicleState.vehicleInitialState(viewModel: $viewModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$VehicleInitialStateImpl);
+            other is _$VehicleInitialStateImpl &&
+            (identical(other.viewModel, viewModel) ||
+                other.viewModel == viewModel));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, viewModel);
+
+  /// Create a copy of VehicleState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VehicleInitialStateImplCopyWith<_$VehicleInitialStateImpl> get copyWith =>
+      __$$VehicleInitialStateImplCopyWithImpl<_$VehicleInitialStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() vehicleInitialState,
-    required TResult Function() vehicleLoadingState,
-    required TResult Function(List<VehicleStatus> vehicles) vehicleLoadedState,
+    required TResult Function(VehicleViewModel viewModel) vehicleInitialState,
+    required TResult Function(VehicleViewModel viewModel) vehicleLoadingState,
+    required TResult Function(VehicleViewModel viewModel) vehicleLoadedState,
     required TResult Function(
-            List<VehicleStatus> viewModel, BaseException exception)
+            VehicleViewModel viewModel, BaseException exception)
         vehicleErrorState,
   }) {
-    return vehicleInitialState();
+    return vehicleInitialState(viewModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? vehicleInitialState,
-    TResult? Function()? vehicleLoadingState,
-    TResult? Function(List<VehicleStatus> vehicles)? vehicleLoadedState,
-    TResult? Function(List<VehicleStatus> viewModel, BaseException exception)?
+    TResult? Function(VehicleViewModel viewModel)? vehicleInitialState,
+    TResult? Function(VehicleViewModel viewModel)? vehicleLoadingState,
+    TResult? Function(VehicleViewModel viewModel)? vehicleLoadedState,
+    TResult? Function(VehicleViewModel viewModel, BaseException exception)?
         vehicleErrorState,
   }) {
-    return vehicleInitialState?.call();
+    return vehicleInitialState?.call(viewModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? vehicleInitialState,
-    TResult Function()? vehicleLoadingState,
-    TResult Function(List<VehicleStatus> vehicles)? vehicleLoadedState,
-    TResult Function(List<VehicleStatus> viewModel, BaseException exception)?
+    TResult Function(VehicleViewModel viewModel)? vehicleInitialState,
+    TResult Function(VehicleViewModel viewModel)? vehicleLoadingState,
+    TResult Function(VehicleViewModel viewModel)? vehicleLoadedState,
+    TResult Function(VehicleViewModel viewModel, BaseException exception)?
         vehicleErrorState,
     required TResult orElse(),
   }) {
     if (vehicleInitialState != null) {
-      return vehicleInitialState();
+      return vehicleInitialState(viewModel);
     }
     return orElse();
   }
@@ -212,15 +280,33 @@ class _$VehicleInitialStateImpl extends VehicleInitialState {
 }
 
 abstract class VehicleInitialState extends VehicleState {
-  const factory VehicleInitialState() = _$VehicleInitialStateImpl;
+  const factory VehicleInitialState({final VehicleViewModel viewModel}) =
+      _$VehicleInitialStateImpl;
   const VehicleInitialState._() : super._();
+
+  @override
+  VehicleViewModel get viewModel;
+
+  /// Create a copy of VehicleState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$VehicleInitialStateImplCopyWith<_$VehicleInitialStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$VehicleLoadingStateImplCopyWith<$Res> {
+abstract class _$$VehicleLoadingStateImplCopyWith<$Res>
+    implements $VehicleStateCopyWith<$Res> {
   factory _$$VehicleLoadingStateImplCopyWith(_$VehicleLoadingStateImpl value,
           $Res Function(_$VehicleLoadingStateImpl) then) =
       __$$VehicleLoadingStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({VehicleViewModel viewModel});
+
+  @override
+  $VehicleViewModelCopyWith<$Res> get viewModel;
 }
 
 /// @nodoc
@@ -233,65 +319,93 @@ class __$$VehicleLoadingStateImplCopyWithImpl<$Res>
 
   /// Create a copy of VehicleState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewModel = null,
+  }) {
+    return _then(_$VehicleLoadingStateImpl(
+      viewModel: null == viewModel
+          ? _value.viewModel
+          : viewModel // ignore: cast_nullable_to_non_nullable
+              as VehicleViewModel,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$VehicleLoadingStateImpl extends VehicleLoadingState {
-  const _$VehicleLoadingStateImpl() : super._();
+  const _$VehicleLoadingStateImpl({this.viewModel = const VehicleViewModel()})
+      : super._();
+
+  @override
+  @JsonKey()
+  final VehicleViewModel viewModel;
 
   @override
   String toString() {
-    return 'VehicleState.vehicleLoadingState()';
+    return 'VehicleState.vehicleLoadingState(viewModel: $viewModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$VehicleLoadingStateImpl);
+            other is _$VehicleLoadingStateImpl &&
+            (identical(other.viewModel, viewModel) ||
+                other.viewModel == viewModel));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, viewModel);
+
+  /// Create a copy of VehicleState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VehicleLoadingStateImplCopyWith<_$VehicleLoadingStateImpl> get copyWith =>
+      __$$VehicleLoadingStateImplCopyWithImpl<_$VehicleLoadingStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() vehicleInitialState,
-    required TResult Function() vehicleLoadingState,
-    required TResult Function(List<VehicleStatus> vehicles) vehicleLoadedState,
+    required TResult Function(VehicleViewModel viewModel) vehicleInitialState,
+    required TResult Function(VehicleViewModel viewModel) vehicleLoadingState,
+    required TResult Function(VehicleViewModel viewModel) vehicleLoadedState,
     required TResult Function(
-            List<VehicleStatus> viewModel, BaseException exception)
+            VehicleViewModel viewModel, BaseException exception)
         vehicleErrorState,
   }) {
-    return vehicleLoadingState();
+    return vehicleLoadingState(viewModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? vehicleInitialState,
-    TResult? Function()? vehicleLoadingState,
-    TResult? Function(List<VehicleStatus> vehicles)? vehicleLoadedState,
-    TResult? Function(List<VehicleStatus> viewModel, BaseException exception)?
+    TResult? Function(VehicleViewModel viewModel)? vehicleInitialState,
+    TResult? Function(VehicleViewModel viewModel)? vehicleLoadingState,
+    TResult? Function(VehicleViewModel viewModel)? vehicleLoadedState,
+    TResult? Function(VehicleViewModel viewModel, BaseException exception)?
         vehicleErrorState,
   }) {
-    return vehicleLoadingState?.call();
+    return vehicleLoadingState?.call(viewModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? vehicleInitialState,
-    TResult Function()? vehicleLoadingState,
-    TResult Function(List<VehicleStatus> vehicles)? vehicleLoadedState,
-    TResult Function(List<VehicleStatus> viewModel, BaseException exception)?
+    TResult Function(VehicleViewModel viewModel)? vehicleInitialState,
+    TResult Function(VehicleViewModel viewModel)? vehicleLoadingState,
+    TResult Function(VehicleViewModel viewModel)? vehicleLoadedState,
+    TResult Function(VehicleViewModel viewModel, BaseException exception)?
         vehicleErrorState,
     required TResult orElse(),
   }) {
     if (vehicleLoadingState != null) {
-      return vehicleLoadingState();
+      return vehicleLoadingState(viewModel);
     }
     return orElse();
   }
@@ -335,17 +449,33 @@ class _$VehicleLoadingStateImpl extends VehicleLoadingState {
 }
 
 abstract class VehicleLoadingState extends VehicleState {
-  const factory VehicleLoadingState() = _$VehicleLoadingStateImpl;
+  const factory VehicleLoadingState({final VehicleViewModel viewModel}) =
+      _$VehicleLoadingStateImpl;
   const VehicleLoadingState._() : super._();
+
+  @override
+  VehicleViewModel get viewModel;
+
+  /// Create a copy of VehicleState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$VehicleLoadingStateImplCopyWith<_$VehicleLoadingStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$VehicleLoadedStateImplCopyWith<$Res> {
+abstract class _$$VehicleLoadedStateImplCopyWith<$Res>
+    implements $VehicleStateCopyWith<$Res> {
   factory _$$VehicleLoadedStateImplCopyWith(_$VehicleLoadedStateImpl value,
           $Res Function(_$VehicleLoadedStateImpl) then) =
       __$$VehicleLoadedStateImplCopyWithImpl<$Res>;
+  @override
   @useResult
-  $Res call({List<VehicleStatus> vehicles});
+  $Res call({VehicleViewModel viewModel});
+
+  @override
+  $VehicleViewModelCopyWith<$Res> get viewModel;
 }
 
 /// @nodoc
@@ -361,13 +491,13 @@ class __$$VehicleLoadedStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? vehicles = null,
+    Object? viewModel = null,
   }) {
     return _then(_$VehicleLoadedStateImpl(
-      vehicles: null == vehicles
-          ? _value._vehicles
-          : vehicles // ignore: cast_nullable_to_non_nullable
-              as List<VehicleStatus>,
+      viewModel: null == viewModel
+          ? _value.viewModel
+          : viewModel // ignore: cast_nullable_to_non_nullable
+              as VehicleViewModel,
     ));
   }
 }
@@ -375,23 +505,16 @@ class __$$VehicleLoadedStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$VehicleLoadedStateImpl extends VehicleLoadedState {
-  const _$VehicleLoadedStateImpl(
-      {final List<VehicleStatus> vehicles = const []})
-      : _vehicles = vehicles,
-        super._();
+  const _$VehicleLoadedStateImpl({this.viewModel = const VehicleViewModel()})
+      : super._();
 
-  final List<VehicleStatus> _vehicles;
   @override
   @JsonKey()
-  List<VehicleStatus> get vehicles {
-    if (_vehicles is EqualUnmodifiableListView) return _vehicles;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_vehicles);
-  }
+  final VehicleViewModel viewModel;
 
   @override
   String toString() {
-    return 'VehicleState.vehicleLoadedState(vehicles: $vehicles)';
+    return 'VehicleState.vehicleLoadedState(viewModel: $viewModel)';
   }
 
   @override
@@ -399,12 +522,12 @@ class _$VehicleLoadedStateImpl extends VehicleLoadedState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VehicleLoadedStateImpl &&
-            const DeepCollectionEquality().equals(other._vehicles, _vehicles));
+            (identical(other.viewModel, viewModel) ||
+                other.viewModel == viewModel));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_vehicles));
+  int get hashCode => Object.hash(runtimeType, viewModel);
 
   /// Create a copy of VehicleState
   /// with the given fields replaced by the non-null parameter values.
@@ -418,40 +541,40 @@ class _$VehicleLoadedStateImpl extends VehicleLoadedState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() vehicleInitialState,
-    required TResult Function() vehicleLoadingState,
-    required TResult Function(List<VehicleStatus> vehicles) vehicleLoadedState,
+    required TResult Function(VehicleViewModel viewModel) vehicleInitialState,
+    required TResult Function(VehicleViewModel viewModel) vehicleLoadingState,
+    required TResult Function(VehicleViewModel viewModel) vehicleLoadedState,
     required TResult Function(
-            List<VehicleStatus> viewModel, BaseException exception)
+            VehicleViewModel viewModel, BaseException exception)
         vehicleErrorState,
   }) {
-    return vehicleLoadedState(vehicles);
+    return vehicleLoadedState(viewModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? vehicleInitialState,
-    TResult? Function()? vehicleLoadingState,
-    TResult? Function(List<VehicleStatus> vehicles)? vehicleLoadedState,
-    TResult? Function(List<VehicleStatus> viewModel, BaseException exception)?
+    TResult? Function(VehicleViewModel viewModel)? vehicleInitialState,
+    TResult? Function(VehicleViewModel viewModel)? vehicleLoadingState,
+    TResult? Function(VehicleViewModel viewModel)? vehicleLoadedState,
+    TResult? Function(VehicleViewModel viewModel, BaseException exception)?
         vehicleErrorState,
   }) {
-    return vehicleLoadedState?.call(vehicles);
+    return vehicleLoadedState?.call(viewModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? vehicleInitialState,
-    TResult Function()? vehicleLoadingState,
-    TResult Function(List<VehicleStatus> vehicles)? vehicleLoadedState,
-    TResult Function(List<VehicleStatus> viewModel, BaseException exception)?
+    TResult Function(VehicleViewModel viewModel)? vehicleInitialState,
+    TResult Function(VehicleViewModel viewModel)? vehicleLoadingState,
+    TResult Function(VehicleViewModel viewModel)? vehicleLoadedState,
+    TResult Function(VehicleViewModel viewModel, BaseException exception)?
         vehicleErrorState,
     required TResult orElse(),
   }) {
     if (vehicleLoadedState != null) {
-      return vehicleLoadedState(vehicles);
+      return vehicleLoadedState(viewModel);
     }
     return orElse();
   }
@@ -495,27 +618,33 @@ class _$VehicleLoadedStateImpl extends VehicleLoadedState {
 }
 
 abstract class VehicleLoadedState extends VehicleState {
-  const factory VehicleLoadedState({final List<VehicleStatus> vehicles}) =
+  const factory VehicleLoadedState({final VehicleViewModel viewModel}) =
       _$VehicleLoadedStateImpl;
   const VehicleLoadedState._() : super._();
 
-  List<VehicleStatus> get vehicles;
+  @override
+  VehicleViewModel get viewModel;
 
   /// Create a copy of VehicleState
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$VehicleLoadedStateImplCopyWith<_$VehicleLoadedStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$VehicleErrorStateImplCopyWith<$Res> {
+abstract class _$$VehicleErrorStateImplCopyWith<$Res>
+    implements $VehicleStateCopyWith<$Res> {
   factory _$$VehicleErrorStateImplCopyWith(_$VehicleErrorStateImpl value,
           $Res Function(_$VehicleErrorStateImpl) then) =
       __$$VehicleErrorStateImplCopyWithImpl<$Res>;
+  @override
   @useResult
-  $Res call({List<VehicleStatus> viewModel, BaseException exception});
+  $Res call({VehicleViewModel viewModel, BaseException exception});
 
+  @override
+  $VehicleViewModelCopyWith<$Res> get viewModel;
   $BaseExceptionCopyWith<$Res> get exception;
 }
 
@@ -537,9 +666,9 @@ class __$$VehicleErrorStateImplCopyWithImpl<$Res>
   }) {
     return _then(_$VehicleErrorStateImpl(
       viewModel: null == viewModel
-          ? _value._viewModel
+          ? _value.viewModel
           : viewModel // ignore: cast_nullable_to_non_nullable
-              as List<VehicleStatus>,
+              as VehicleViewModel,
       exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -562,20 +691,13 @@ class __$$VehicleErrorStateImplCopyWithImpl<$Res>
 
 class _$VehicleErrorStateImpl extends VehicleErrorState {
   const _$VehicleErrorStateImpl(
-      {final List<VehicleStatus> viewModel = const [],
+      {this.viewModel = const VehicleViewModel(),
       this.exception = const BaseException()})
-      : _viewModel = viewModel,
-        super._();
+      : super._();
 
-  final List<VehicleStatus> _viewModel;
   @override
   @JsonKey()
-  List<VehicleStatus> get viewModel {
-    if (_viewModel is EqualUnmodifiableListView) return _viewModel;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_viewModel);
-  }
-
+  final VehicleViewModel viewModel;
   @override
   @JsonKey()
   final BaseException exception;
@@ -590,15 +712,14 @@ class _$VehicleErrorStateImpl extends VehicleErrorState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VehicleErrorStateImpl &&
-            const DeepCollectionEquality()
-                .equals(other._viewModel, _viewModel) &&
+            (identical(other.viewModel, viewModel) ||
+                other.viewModel == viewModel) &&
             (identical(other.exception, exception) ||
                 other.exception == exception));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_viewModel), exception);
+  int get hashCode => Object.hash(runtimeType, viewModel, exception);
 
   /// Create a copy of VehicleState
   /// with the given fields replaced by the non-null parameter values.
@@ -612,11 +733,11 @@ class _$VehicleErrorStateImpl extends VehicleErrorState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() vehicleInitialState,
-    required TResult Function() vehicleLoadingState,
-    required TResult Function(List<VehicleStatus> vehicles) vehicleLoadedState,
+    required TResult Function(VehicleViewModel viewModel) vehicleInitialState,
+    required TResult Function(VehicleViewModel viewModel) vehicleLoadingState,
+    required TResult Function(VehicleViewModel viewModel) vehicleLoadedState,
     required TResult Function(
-            List<VehicleStatus> viewModel, BaseException exception)
+            VehicleViewModel viewModel, BaseException exception)
         vehicleErrorState,
   }) {
     return vehicleErrorState(viewModel, exception);
@@ -625,10 +746,10 @@ class _$VehicleErrorStateImpl extends VehicleErrorState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? vehicleInitialState,
-    TResult? Function()? vehicleLoadingState,
-    TResult? Function(List<VehicleStatus> vehicles)? vehicleLoadedState,
-    TResult? Function(List<VehicleStatus> viewModel, BaseException exception)?
+    TResult? Function(VehicleViewModel viewModel)? vehicleInitialState,
+    TResult? Function(VehicleViewModel viewModel)? vehicleLoadingState,
+    TResult? Function(VehicleViewModel viewModel)? vehicleLoadedState,
+    TResult? Function(VehicleViewModel viewModel, BaseException exception)?
         vehicleErrorState,
   }) {
     return vehicleErrorState?.call(viewModel, exception);
@@ -637,10 +758,10 @@ class _$VehicleErrorStateImpl extends VehicleErrorState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? vehicleInitialState,
-    TResult Function()? vehicleLoadingState,
-    TResult Function(List<VehicleStatus> vehicles)? vehicleLoadedState,
-    TResult Function(List<VehicleStatus> viewModel, BaseException exception)?
+    TResult Function(VehicleViewModel viewModel)? vehicleInitialState,
+    TResult Function(VehicleViewModel viewModel)? vehicleLoadingState,
+    TResult Function(VehicleViewModel viewModel)? vehicleLoadedState,
+    TResult Function(VehicleViewModel viewModel, BaseException exception)?
         vehicleErrorState,
     required TResult orElse(),
   }) {
@@ -690,15 +811,17 @@ class _$VehicleErrorStateImpl extends VehicleErrorState {
 
 abstract class VehicleErrorState extends VehicleState {
   const factory VehicleErrorState(
-      {final List<VehicleStatus> viewModel,
+      {final VehicleViewModel viewModel,
       final BaseException exception}) = _$VehicleErrorStateImpl;
   const VehicleErrorState._() : super._();
 
-  List<VehicleStatus> get viewModel;
+  @override
+  VehicleViewModel get viewModel;
   BaseException get exception;
 
   /// Create a copy of VehicleState
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$VehicleErrorStateImplCopyWith<_$VehicleErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;

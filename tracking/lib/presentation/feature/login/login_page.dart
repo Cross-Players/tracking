@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gps/presentation/defination/string.dart';
+import 'package:gps/presentation/definition/string.dart';
 import 'package:gps/presentation/di/di.dart';
 import 'package:gps/presentation/feature/login/bloc/login_cubit.dart';
 import 'package:gps/presentation/feature/login/bloc/login_state.dart';

@@ -4,7 +4,7 @@ import 'package:gps/presentation/di/di.dart';
 import 'package:gps/presentation/feature/monitor/bloc/monitor_cubit.dart';
 import 'package:gps/presentation/feature/monitor/bloc/monitor_state.dart';
 import 'package:gps/presentation/feature/home/widget/app_bar_widget.dart';
-import 'package:gps/presentation/feature/home/widget/list_car_widget.dart';
+import 'package:gps/presentation/feature/vehicle/list_car_widget.dart';
 import 'package:gps/presentation/feature/monitor/widget/camera_widget.dart';
 import 'package:maps_plugin/maps_plugin.dart';
 
@@ -16,7 +16,7 @@ class MonitorPage extends StatefulWidget {
 }
 
 class _MonitorPageState extends State<MonitorPage> {
-  final MonitorCubit _cubit = di(); // Inject MonitorCubit
+  final MonitorCubit _cubit = di();
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +25,10 @@ class _MonitorPageState extends State<MonitorPage> {
       child: BlocBuilder<MonitorCubit, MonitorState>(
         builder: (context, state) {
           final selectedVehicle = state.viewModel.selectedVehicle;
-
           return Scaffold(
             appBar: const CustomAppBar(),
             body: Row(
               children: [
-                // Vehicle List Section
                 Expanded(
                   flex: 2,
                   child: Container(
@@ -41,18 +39,16 @@ class _MonitorPageState extends State<MonitorPage> {
                     ),
                   ),
                 ),
-
-                // Map Section
                 Expanded(
                   flex: selectedVehicle != null ? 3 : 5,
                   child: const MapsScreen(param: MapsScreenParam()),
                 ),
-
-                // Camera Section (only when a vehicle is selected)
                 if (selectedVehicle != null)
                   Expanded(
                     flex: 4,
-                    child: CameraGridScreen(),
+                    child: CameraGridScreen(
+                      selectedVehicle: selectedVehicle,
+                    ),
                   ),
               ],
             ),
