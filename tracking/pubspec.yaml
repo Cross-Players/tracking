@@ -44,6 +44,9 @@ dependencies:
   json_annotation: 4.9.0
   flutter_bloc: 8.1.6
   dartz: 0.10.1
+  media_kit: ^1.1.11
+  media_kit_video: ^1.2.5
+  media_kit_libs_video: ^1.0.5
   tracking_core:
     path: ../tracking_core
   maps_plugin:

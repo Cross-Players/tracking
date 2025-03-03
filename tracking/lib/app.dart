@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:gps/generated/l10n.dart';
 import 'package:gps/presentation/definition/string.dart';
 import 'package:gps/presentation/di/di.dart';
+import 'package:gps/presentation/feature/camera/camera_screen.dart';
 import 'package:gps/presentation/route/route.dart';
 import 'package:gps/presentation/utils/app_log_util.dart';
 import 'package:gps/presentation/widget/base_state.dart';
@@ -82,7 +83,8 @@ class _MyAppState extends BaseState<MyApp> with WidgetsBindingObserver {
               onGenerateRoute: (settings) =>
                   di<AppRoute>().generateRoute(settings),
               debugShowCheckedModeBanner: false,
-              initialRoute: ScreenName.root,
+              // initialRoute: ScreenName.root,
+              home: CameraScreen(),
               localizationsDelegates: const [S.delegate],
             );
           },
