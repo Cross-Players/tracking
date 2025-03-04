@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:maps_plugin/generated/assets.gen.dart';
+import 'package:maps_plugin/src/data/plugin.dart';
 import 'package:maps_plugin/src/presentation/feature/maps/bloc/maps_cubit.dart';
 import 'package:maps_plugin/src/presentation/feature/maps/bloc/maps_state.dart';
 
@@ -41,6 +42,9 @@ class _MapsScreenState extends State<MapsScreen> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       await _setupMarkerImage();
       _cubit.init();
+      MapsPluginUtil.eventsStream.listen((event) {
+        /// TODO: implement event
+      });
     });
   }
 
@@ -64,6 +68,7 @@ class _MapsScreenState extends State<MapsScreen> {
                       .map((e) => Marker(
                           onTap: () {
                             _cubit.onChangeMarkers(e);
+                            MapsPluginUtil.sendEvent('Marker push event');
                           },
                           markerId: MarkerId(e.id),
                           position: e.location,
@@ -155,7 +160,6 @@ class _MapsScreenState extends State<MapsScreen> {
     return (await fi.image.toByteData(format: ui.ImageByteFormat.png))
         ?.buffer
         .asUint8List();
-
   }
 
   /// Generate image to avoid blur, blurry
