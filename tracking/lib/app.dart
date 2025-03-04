@@ -84,6 +84,7 @@ class _MyAppState extends BaseState<MyApp> with WidgetsBindingObserver {
                   di<AppRoute>().generateRoute(settings),
               debugShowCheckedModeBanner: false,
               // initialRoute: ScreenName.root,
+              // home: CameraScreen(),
               home: CameraScreen(),
               localizationsDelegates: const [S.delegate],
             );

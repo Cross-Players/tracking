@@ -52,6 +52,7 @@ dependencies:
   maps_plugin:
     path: ../maps_plugin
   flutter_dotenv: 5.0.2
+  flutter_inappwebview: ^6.1.5
 
 dev_dependencies:
   flutter_test:
@@ -81,6 +82,9 @@ flutter:
   assets:
     - assets/data/
     - assets/l10n/
+    - assets/jessibuca_player.html
+    - assets/jessibuca.js
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

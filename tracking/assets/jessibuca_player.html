@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jessibuca Player</title>
+</head>
+<script>
+    function loadJessibuca() {
+        var script = document.createElement('script');
+        script.src = "jessibuca.js";
+        script.onload = function () {
+            console.log("Jessibuca loaded!");
+            initPlayer();
+        };
+        script.onerror = function () {
+            console.error("Failed to load Jessibuca!");
+        };
+        document.head.appendChild(script);
+    }
+
+    function initPlayer() {
+        if (typeof Jessibuca !== "undefined") {
+            window.player = new Jessibuca({
+                container: document.getElementById('player-container'),
+                videoBuffer: 0.5,
+                useWCS: false,
+                isResize: true,
+                isFlv: true,
+                debug: true,
+                loadingTimeout: 10000,
+            });
+            console.log("Jessibuca initialized!");
+        } else {
+            console.error("Jessibuca is still not defined!");
+        }
+    }
+
+    function playStream(url) {
+            console.log("Jessibuca start play stream!");
+        if (window.player) {
+            window.player.play(url);
+            console.log("Jessibuca PLAY STREAM!");
+        } else {
+            console.error("Player is not initialized!");
+        }
+    }
+    window.playStream = playStream;
+    window.onload = loadJessibuca;
+</script>
+<body>
+<div id="player-container" style="width: 100%; height: 100%;"></div>
+<button onclick="playStream('ws://171.244.62.84:30002/live/014800015940-1?type=1')">
+    Play Stream
+</button>
+</body>
+</html>
