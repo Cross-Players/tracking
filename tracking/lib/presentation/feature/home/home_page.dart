@@ -10,6 +10,16 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      MapsPluginUtil.eventsStream.listen((event) {
+        /// TODO: implement when click marker
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
