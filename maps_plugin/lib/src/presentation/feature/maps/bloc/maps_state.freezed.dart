@@ -22,6 +22,7 @@ mixin _$MapsState {
     required TResult Function(MapsViewModel viewModel) mapsPrimaryState,
     required TResult Function(MapsViewModel viewModel, bool shouldShowLoading)
         mapsLoadingState,
+    required TResult Function(MapsViewModel viewModel) mapsChangedMarkerState,
     required TResult Function(MapsViewModel viewModel, BaseException exception)
         mapsErrorState,
   }) =>
@@ -31,6 +32,7 @@ mixin _$MapsState {
     TResult? Function(MapsViewModel viewModel)? mapsPrimaryState,
     TResult? Function(MapsViewModel viewModel, bool shouldShowLoading)?
         mapsLoadingState,
+    TResult? Function(MapsViewModel viewModel)? mapsChangedMarkerState,
     TResult? Function(MapsViewModel viewModel, BaseException exception)?
         mapsErrorState,
   }) =>
@@ -40,6 +42,7 @@ mixin _$MapsState {
     TResult Function(MapsViewModel viewModel)? mapsPrimaryState,
     TResult Function(MapsViewModel viewModel, bool shouldShowLoading)?
         mapsLoadingState,
+    TResult Function(MapsViewModel viewModel)? mapsChangedMarkerState,
     TResult Function(MapsViewModel viewModel, BaseException exception)?
         mapsErrorState,
     required TResult orElse(),
@@ -49,6 +52,8 @@ mixin _$MapsState {
   TResult map<TResult extends Object?>({
     required TResult Function(MapsPrimaryState value) mapsPrimaryState,
     required TResult Function(MapsLoadingState value) mapsLoadingState,
+    required TResult Function(MapsChangedMarkerState value)
+        mapsChangedMarkerState,
     required TResult Function(MapsErrorState value) mapsErrorState,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +61,7 @@ mixin _$MapsState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MapsPrimaryState value)? mapsPrimaryState,
     TResult? Function(MapsLoadingState value)? mapsLoadingState,
+    TResult? Function(MapsChangedMarkerState value)? mapsChangedMarkerState,
     TResult? Function(MapsErrorState value)? mapsErrorState,
   }) =>
       throw _privateConstructorUsedError;
@@ -63,6 +69,7 @@ mixin _$MapsState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MapsPrimaryState value)? mapsPrimaryState,
     TResult Function(MapsLoadingState value)? mapsLoadingState,
+    TResult Function(MapsChangedMarkerState value)? mapsChangedMarkerState,
     TResult Function(MapsErrorState value)? mapsErrorState,
     required TResult orElse(),
   }) =>
@@ -201,6 +208,7 @@ class _$MapsPrimaryStateImpl extends MapsPrimaryState {
     required TResult Function(MapsViewModel viewModel) mapsPrimaryState,
     required TResult Function(MapsViewModel viewModel, bool shouldShowLoading)
         mapsLoadingState,
+    required TResult Function(MapsViewModel viewModel) mapsChangedMarkerState,
     required TResult Function(MapsViewModel viewModel, BaseException exception)
         mapsErrorState,
   }) {
@@ -213,6 +221,7 @@ class _$MapsPrimaryStateImpl extends MapsPrimaryState {
     TResult? Function(MapsViewModel viewModel)? mapsPrimaryState,
     TResult? Function(MapsViewModel viewModel, bool shouldShowLoading)?
         mapsLoadingState,
+    TResult? Function(MapsViewModel viewModel)? mapsChangedMarkerState,
     TResult? Function(MapsViewModel viewModel, BaseException exception)?
         mapsErrorState,
   }) {
@@ -225,6 +234,7 @@ class _$MapsPrimaryStateImpl extends MapsPrimaryState {
     TResult Function(MapsViewModel viewModel)? mapsPrimaryState,
     TResult Function(MapsViewModel viewModel, bool shouldShowLoading)?
         mapsLoadingState,
+    TResult Function(MapsViewModel viewModel)? mapsChangedMarkerState,
     TResult Function(MapsViewModel viewModel, BaseException exception)?
         mapsErrorState,
     required TResult orElse(),
@@ -240,6 +250,8 @@ class _$MapsPrimaryStateImpl extends MapsPrimaryState {
   TResult map<TResult extends Object?>({
     required TResult Function(MapsPrimaryState value) mapsPrimaryState,
     required TResult Function(MapsLoadingState value) mapsLoadingState,
+    required TResult Function(MapsChangedMarkerState value)
+        mapsChangedMarkerState,
     required TResult Function(MapsErrorState value) mapsErrorState,
   }) {
     return mapsPrimaryState(this);
@@ -250,6 +262,7 @@ class _$MapsPrimaryStateImpl extends MapsPrimaryState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MapsPrimaryState value)? mapsPrimaryState,
     TResult? Function(MapsLoadingState value)? mapsLoadingState,
+    TResult? Function(MapsChangedMarkerState value)? mapsChangedMarkerState,
     TResult? Function(MapsErrorState value)? mapsErrorState,
   }) {
     return mapsPrimaryState?.call(this);
@@ -260,6 +273,7 @@ class _$MapsPrimaryStateImpl extends MapsPrimaryState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MapsPrimaryState value)? mapsPrimaryState,
     TResult Function(MapsLoadingState value)? mapsLoadingState,
+    TResult Function(MapsChangedMarkerState value)? mapsChangedMarkerState,
     TResult Function(MapsErrorState value)? mapsErrorState,
     required TResult orElse(),
   }) {
@@ -377,6 +391,7 @@ class _$MapsLoadingStateImpl extends MapsLoadingState {
     required TResult Function(MapsViewModel viewModel) mapsPrimaryState,
     required TResult Function(MapsViewModel viewModel, bool shouldShowLoading)
         mapsLoadingState,
+    required TResult Function(MapsViewModel viewModel) mapsChangedMarkerState,
     required TResult Function(MapsViewModel viewModel, BaseException exception)
         mapsErrorState,
   }) {
@@ -389,6 +404,7 @@ class _$MapsLoadingStateImpl extends MapsLoadingState {
     TResult? Function(MapsViewModel viewModel)? mapsPrimaryState,
     TResult? Function(MapsViewModel viewModel, bool shouldShowLoading)?
         mapsLoadingState,
+    TResult? Function(MapsViewModel viewModel)? mapsChangedMarkerState,
     TResult? Function(MapsViewModel viewModel, BaseException exception)?
         mapsErrorState,
   }) {
@@ -401,6 +417,7 @@ class _$MapsLoadingStateImpl extends MapsLoadingState {
     TResult Function(MapsViewModel viewModel)? mapsPrimaryState,
     TResult Function(MapsViewModel viewModel, bool shouldShowLoading)?
         mapsLoadingState,
+    TResult Function(MapsViewModel viewModel)? mapsChangedMarkerState,
     TResult Function(MapsViewModel viewModel, BaseException exception)?
         mapsErrorState,
     required TResult orElse(),
@@ -416,6 +433,8 @@ class _$MapsLoadingStateImpl extends MapsLoadingState {
   TResult map<TResult extends Object?>({
     required TResult Function(MapsPrimaryState value) mapsPrimaryState,
     required TResult Function(MapsLoadingState value) mapsLoadingState,
+    required TResult Function(MapsChangedMarkerState value)
+        mapsChangedMarkerState,
     required TResult Function(MapsErrorState value) mapsErrorState,
   }) {
     return mapsLoadingState(this);
@@ -426,6 +445,7 @@ class _$MapsLoadingStateImpl extends MapsLoadingState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MapsPrimaryState value)? mapsPrimaryState,
     TResult? Function(MapsLoadingState value)? mapsLoadingState,
+    TResult? Function(MapsChangedMarkerState value)? mapsChangedMarkerState,
     TResult? Function(MapsErrorState value)? mapsErrorState,
   }) {
     return mapsLoadingState?.call(this);
@@ -436,6 +456,7 @@ class _$MapsLoadingStateImpl extends MapsLoadingState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MapsPrimaryState value)? mapsPrimaryState,
     TResult Function(MapsLoadingState value)? mapsLoadingState,
+    TResult Function(MapsChangedMarkerState value)? mapsChangedMarkerState,
     TResult Function(MapsErrorState value)? mapsErrorState,
     required TResult orElse(),
   }) {
@@ -462,6 +483,180 @@ abstract class MapsLoadingState extends MapsState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MapsLoadingStateImplCopyWith<_$MapsLoadingStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MapsChangedMarkerStateImplCopyWith<$Res>
+    implements $MapsStateCopyWith<$Res> {
+  factory _$$MapsChangedMarkerStateImplCopyWith(
+          _$MapsChangedMarkerStateImpl value,
+          $Res Function(_$MapsChangedMarkerStateImpl) then) =
+      __$$MapsChangedMarkerStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({MapsViewModel viewModel});
+
+  @override
+  $MapsViewModelCopyWith<$Res> get viewModel;
+}
+
+/// @nodoc
+class __$$MapsChangedMarkerStateImplCopyWithImpl<$Res>
+    extends _$MapsStateCopyWithImpl<$Res, _$MapsChangedMarkerStateImpl>
+    implements _$$MapsChangedMarkerStateImplCopyWith<$Res> {
+  __$$MapsChangedMarkerStateImplCopyWithImpl(
+      _$MapsChangedMarkerStateImpl _value,
+      $Res Function(_$MapsChangedMarkerStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MapsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewModel = null,
+  }) {
+    return _then(_$MapsChangedMarkerStateImpl(
+      viewModel: null == viewModel
+          ? _value.viewModel
+          : viewModel // ignore: cast_nullable_to_non_nullable
+              as MapsViewModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MapsChangedMarkerStateImpl extends MapsChangedMarkerState {
+  const _$MapsChangedMarkerStateImpl({this.viewModel = const MapsViewModel()})
+      : super._();
+
+  @override
+  @JsonKey()
+  final MapsViewModel viewModel;
+
+  @override
+  String toString() {
+    return 'MapsState.mapsChangedMarkerState(viewModel: $viewModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MapsChangedMarkerStateImpl &&
+            (identical(other.viewModel, viewModel) ||
+                other.viewModel == viewModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, viewModel);
+
+  /// Create a copy of MapsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MapsChangedMarkerStateImplCopyWith<_$MapsChangedMarkerStateImpl>
+      get copyWith => __$$MapsChangedMarkerStateImplCopyWithImpl<
+          _$MapsChangedMarkerStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(MapsViewModel viewModel) mapsPrimaryState,
+    required TResult Function(MapsViewModel viewModel, bool shouldShowLoading)
+        mapsLoadingState,
+    required TResult Function(MapsViewModel viewModel) mapsChangedMarkerState,
+    required TResult Function(MapsViewModel viewModel, BaseException exception)
+        mapsErrorState,
+  }) {
+    return mapsChangedMarkerState(viewModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(MapsViewModel viewModel)? mapsPrimaryState,
+    TResult? Function(MapsViewModel viewModel, bool shouldShowLoading)?
+        mapsLoadingState,
+    TResult? Function(MapsViewModel viewModel)? mapsChangedMarkerState,
+    TResult? Function(MapsViewModel viewModel, BaseException exception)?
+        mapsErrorState,
+  }) {
+    return mapsChangedMarkerState?.call(viewModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(MapsViewModel viewModel)? mapsPrimaryState,
+    TResult Function(MapsViewModel viewModel, bool shouldShowLoading)?
+        mapsLoadingState,
+    TResult Function(MapsViewModel viewModel)? mapsChangedMarkerState,
+    TResult Function(MapsViewModel viewModel, BaseException exception)?
+        mapsErrorState,
+    required TResult orElse(),
+  }) {
+    if (mapsChangedMarkerState != null) {
+      return mapsChangedMarkerState(viewModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MapsPrimaryState value) mapsPrimaryState,
+    required TResult Function(MapsLoadingState value) mapsLoadingState,
+    required TResult Function(MapsChangedMarkerState value)
+        mapsChangedMarkerState,
+    required TResult Function(MapsErrorState value) mapsErrorState,
+  }) {
+    return mapsChangedMarkerState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(MapsPrimaryState value)? mapsPrimaryState,
+    TResult? Function(MapsLoadingState value)? mapsLoadingState,
+    TResult? Function(MapsChangedMarkerState value)? mapsChangedMarkerState,
+    TResult? Function(MapsErrorState value)? mapsErrorState,
+  }) {
+    return mapsChangedMarkerState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MapsPrimaryState value)? mapsPrimaryState,
+    TResult Function(MapsLoadingState value)? mapsLoadingState,
+    TResult Function(MapsChangedMarkerState value)? mapsChangedMarkerState,
+    TResult Function(MapsErrorState value)? mapsErrorState,
+    required TResult orElse(),
+  }) {
+    if (mapsChangedMarkerState != null) {
+      return mapsChangedMarkerState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MapsChangedMarkerState extends MapsState {
+  const factory MapsChangedMarkerState({final MapsViewModel viewModel}) =
+      _$MapsChangedMarkerStateImpl;
+  const MapsChangedMarkerState._() : super._();
+
+  @override
+  MapsViewModel get viewModel;
+
+  /// Create a copy of MapsState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MapsChangedMarkerStateImplCopyWith<_$MapsChangedMarkerStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -567,6 +762,7 @@ class _$MapsErrorStateImpl extends MapsErrorState {
     required TResult Function(MapsViewModel viewModel) mapsPrimaryState,
     required TResult Function(MapsViewModel viewModel, bool shouldShowLoading)
         mapsLoadingState,
+    required TResult Function(MapsViewModel viewModel) mapsChangedMarkerState,
     required TResult Function(MapsViewModel viewModel, BaseException exception)
         mapsErrorState,
   }) {
@@ -579,6 +775,7 @@ class _$MapsErrorStateImpl extends MapsErrorState {
     TResult? Function(MapsViewModel viewModel)? mapsPrimaryState,
     TResult? Function(MapsViewModel viewModel, bool shouldShowLoading)?
         mapsLoadingState,
+    TResult? Function(MapsViewModel viewModel)? mapsChangedMarkerState,
     TResult? Function(MapsViewModel viewModel, BaseException exception)?
         mapsErrorState,
   }) {
@@ -591,6 +788,7 @@ class _$MapsErrorStateImpl extends MapsErrorState {
     TResult Function(MapsViewModel viewModel)? mapsPrimaryState,
     TResult Function(MapsViewModel viewModel, bool shouldShowLoading)?
         mapsLoadingState,
+    TResult Function(MapsViewModel viewModel)? mapsChangedMarkerState,
     TResult Function(MapsViewModel viewModel, BaseException exception)?
         mapsErrorState,
     required TResult orElse(),
@@ -606,6 +804,8 @@ class _$MapsErrorStateImpl extends MapsErrorState {
   TResult map<TResult extends Object?>({
     required TResult Function(MapsPrimaryState value) mapsPrimaryState,
     required TResult Function(MapsLoadingState value) mapsLoadingState,
+    required TResult Function(MapsChangedMarkerState value)
+        mapsChangedMarkerState,
     required TResult Function(MapsErrorState value) mapsErrorState,
   }) {
     return mapsErrorState(this);
@@ -616,6 +816,7 @@ class _$MapsErrorStateImpl extends MapsErrorState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MapsPrimaryState value)? mapsPrimaryState,
     TResult? Function(MapsLoadingState value)? mapsLoadingState,
+    TResult? Function(MapsChangedMarkerState value)? mapsChangedMarkerState,
     TResult? Function(MapsErrorState value)? mapsErrorState,
   }) {
     return mapsErrorState?.call(this);
@@ -626,6 +827,7 @@ class _$MapsErrorStateImpl extends MapsErrorState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MapsPrimaryState value)? mapsPrimaryState,
     TResult Function(MapsLoadingState value)? mapsLoadingState,
+    TResult Function(MapsChangedMarkerState value)? mapsChangedMarkerState,
     TResult Function(MapsErrorState value)? mapsErrorState,
     required TResult orElse(),
   }) {

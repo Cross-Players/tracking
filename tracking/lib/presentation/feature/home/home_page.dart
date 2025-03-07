@@ -20,6 +20,16 @@ class _HomePageState extends State<HomePage> {
   final HomeCubit _cubit = di();
 
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      MapsPluginUtil.eventsStream.listen((event) {
+        /// TODO: implement when click marker
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
