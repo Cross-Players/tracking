@@ -31,6 +31,8 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 ../tracking_core/.flutter-plugins
 ../tracking_core/.flutter-plugins-dependencies
+../maps_plugin/.flutter-plugins
+../maps_plugin/.flutter-plugins-dependencies
 ../.vscode/launch.json
 .pub-cache/
 .pub/
