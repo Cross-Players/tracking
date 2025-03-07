@@ -4,7 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jessibuca Player</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: black;
+        }
+        #player-container {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            position: relative;
+        }
+        #play-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
+<body>
+<div id="player-container">
+    <button id="play-button" onclick="playStream('ws://171.244.62.84:30002/live/014800015940-1?type=1')">
+        Play Stream
+    </button>
+</div>
+
 <script>
     function loadJessibuca() {
         var script = document.createElement('script');
@@ -23,12 +62,16 @@
         if (typeof Jessibuca !== "undefined") {
             window.player = new Jessibuca({
                 container: document.getElementById('player-container'),
-                videoBuffer: 0.5,
+                videoBuffer: 0.1,
+                hasAudio: false,
                 useWCS: false,
-                isResize: true,
+                isResize: false,
                 isFlv: true,
                 debug: true,
-                loadingTimeout: 10000,
+                loadingTimeout: 5000,
+                heartTimeout: 3000,
+                autoWasm: true,
+                wasmDecodeErrorReplay: true,
             });
             console.log("Jessibuca initialized!");
         } else {
@@ -37,7 +80,7 @@
     }
 
     function playStream(url) {
-            console.log("Jessibuca start play stream!");
+        console.log("Jessibuca start play stream!");
         if (window.player) {
             window.player.play(url);
             console.log("Jessibuca PLAY STREAM!");
@@ -45,13 +88,9 @@
             console.error("Player is not initialized!");
         }
     }
-    window.playStream = playStream;
+
     window.onload = loadJessibuca;
+    window.playStream = playStream;
 </script>
-<body>
-<div id="player-container" style="width: 100%; height: 100%;"></div>
-<button onclick="playStream('ws://171.244.62.84:30002/live/014800015940-1?type=1')">
-    Play Stream
-</button>
 </body>
 </html>
