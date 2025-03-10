@@ -12,6 +12,8 @@ class LoginUseCase extends UseCase<LoginRaw, LoginUseCaseParam> {
   final AuthRepository _repository;
 
   @override
+
+  /// Either<BaseException, LoginRaw> handle results in a way that differentiates between success and failure explicitly
   Future<Either<BaseException, LoginRaw>> call(LoginUseCaseParam param) async {
     try {
       final result = await _repository.login(LoginRequest(

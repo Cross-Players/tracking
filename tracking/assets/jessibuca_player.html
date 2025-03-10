@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jessibuca Player</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: black;
+        }
+        #player-container {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            position: relative;
+        }
+        #play-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="player-container">
+    <button id="play-button" onclick="playStream('ws://171.244.62.84:30002/live/014800015940-1?type=1')">
+        Play Stream
+    </button>
+</div>
+
+<script>
+    function loadJessibuca() {
+        var script = document.createElement('script');
+        script.src = "jessibuca.js";
+        script.onload = function () {
+            console.log("Jessibuca loaded!");
+            initPlayer();
+        };
+        script.onerror = function () {
+            console.error("Failed to load Jessibuca!");
+        };
+        document.head.appendChild(script);
+    }
+
+    function initPlayer() {
+        if (typeof Jessibuca !== "undefined") {
+            window.player = new Jessibuca({
+                container: document.getElementById('player-container'),
+                videoBuffer: 0.1,
+                hasAudio: false,
+                useWCS: false,
+                isResize: false,
+                isFlv: true,
+                debug: true,
+                loadingTimeout: 5000,
+                heartTimeout: 3000,
+                autoWasm: true,
+                wasmDecodeErrorReplay: true,
+            });
+            console.log("Jessibuca initialized!");
+        } else {
+            console.error("Jessibuca is still not defined!");
+        }
+    }
+
+    function playStream(url) {
+        console.log("Jessibuca start play stream!");
+        if (window.player) {
+            window.player.play(url);
+            console.log("Jessibuca PLAY STREAM!");
+        } else {
+            console.error("Player is not initialized!");
+        }
+    }
+
+    window.onload = loadJessibuca;
+    window.playStream = playStream;
+</script>
+</body>
+</html>

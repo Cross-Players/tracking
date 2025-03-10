@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gps/presentation/defination/string.dart';
+import 'package:gps/presentation/definition/string.dart';
 import 'package:gps/presentation/di/di.dart';
 import 'package:gps/presentation/feature/login/bloc/login_cubit.dart';
+import 'package:gps/presentation/feature/login/bloc/login_state.dart';
+import 'package:gps/presentation/feature/login/widget/login_form.dart';
 import 'package:gps/presentation/route/route.dart';
 import 'package:gps/presentation/widget/base_state.dart';
 
@@ -17,24 +19,31 @@ class _LoginPageState extends BaseState<LoginPage> {
   final LoginCubit _cubit = di();
 
   @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      // _cubit.onLogin();
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     return BlocProvider<LoginCubit>(
       create: (_) => _cubit,
-      child: Scaffold(
-          body: Center(
-        child: GestureDetector(
-            behavior: HitTestBehavior.translucent,
-            onTap: () => navigatorState.pushNamed(ScreenName.home),
-            child: const Text('Login page')),
-      )),
+      child: BlocConsumer<LoginCubit, LoginState>(
+        listener: (context, state) {
+          if (state is LoginSuccessState) {
+            navigatorState.pushReplacementNamed(ScreenName.home);
+          }
+        },
+        builder: (context, state) {
+          if (state is LoginLoadingState) {
+            return _buildLoadingWidget();
+          } else {
+            return LoginForm(
+              isError: state is LoginErrorState,
+            );
+          }
+        },
+      ),
+    );
+  }
+
+  Widget _buildLoadingWidget() {
+    return const Center(
+      child: CircularProgressIndicator(),
     );
   }
 }

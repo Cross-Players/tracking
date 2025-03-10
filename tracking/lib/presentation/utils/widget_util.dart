@@ -65,4 +65,6 @@ class WidgetUtil {
     }
     return 16;
   }
+
+  double widthScreen(BuildContext context) => MediaQuery.of(context).size.width;
 }

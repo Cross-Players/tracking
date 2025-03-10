@@ -1,3 +1,4 @@
-cd asset
+cd assets
 fluttergen
-flutter pub global run intl_utils:generate
+cd ..
+fvm flutter pub global run intl_utils:generate
