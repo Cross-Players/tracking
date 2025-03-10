@@ -76,17 +76,17 @@ class _MyAppState extends BaseState<MyApp> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return OverlaySupport.global(
       child: Builder(
-          builder: (context) {
-            return MaterialApp(
-              navigatorKey: navigatorKey,
-              onGenerateRoute: (settings) =>
-                  di<AppRoute>().generateRoute(settings),
-              debugShowCheckedModeBanner: false,
-              initialRoute: ScreenName.tracking,
-              localizationsDelegates: const [S.delegate],
-            );
-          },
-        ),
+        builder: (context) {
+          return MaterialApp(
+            navigatorKey: navigatorKey,
+            onGenerateRoute: (settings) =>
+                di<AppRoute>().generateRoute(settings),
+            debugShowCheckedModeBanner: false,
+            initialRoute: ScreenName.login,
+            localizationsDelegates: const [S.delegate],
+          );
+        },
+      ),
     );
   }
 }

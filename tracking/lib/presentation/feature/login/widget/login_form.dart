@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gps/presentation/feature/login/bloc/login_cubit.dart';
 import 'package:gps/presentation/utils/widget_util.dart';
 import 'package:gps/generated/l10n.dart';
 
 class LoginForm extends StatefulWidget {
+  // Không bỏ isError vì UI của success và unsuccess đều dùng chung LoginForm.
+  // isError giúp phân biệt trạng thái để hiển thị nội dung phù hợp mà không cần tạo UI riêng.
+  // Điều này giúp tái sử dụng code hiệu quả hơn.
+
   final bool isError;
-  final LoginCubit cubit;
   const LoginForm({
     super.key,
     this.isError = false,
-    required this.cubit,
   });
 
   @override
@@ -62,7 +65,8 @@ class _LoginFormState extends State<LoginForm> {
                         const SizedBox(height: 32.0),
                         TextFormField(
                           onChanged: (value) =>
-                              widget.cubit.onUsernameChanged(value),
+                              BlocProvider.of<LoginCubit>(context)
+                                  .onUsernameChanged(value),
                           controller: _usernameController,
                           decoration: InputDecoration(
                             prefixIcon: const Icon(Icons.person),
@@ -82,7 +86,8 @@ class _LoginFormState extends State<LoginForm> {
                         TextFormField(
                           controller: _passwordController,
                           onChanged: (value) =>
-                              widget.cubit.onPasswordChanged(value),
+                              BlocProvider.of<LoginCubit>(context)
+                                  .onPasswordChanged(value),
                           obscureText: true,
                           decoration: InputDecoration(
                             prefixIcon: const Icon(Icons.lock),
@@ -107,7 +112,7 @@ class _LoginFormState extends State<LoginForm> {
                           child: ElevatedButton(
                             onPressed: () {
                               if (_formKey.currentState!.validate()) {
-                                widget.cubit.onLogin();
+                                BlocProvider.of<LoginCubit>(context).onLogin();
                               }
                             },
                             style: ElevatedButton.styleFrom(

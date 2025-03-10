@@ -34,7 +34,6 @@ class _LoginPageState extends BaseState<LoginPage> {
           } else {
             return LoginForm(
               isError: state is LoginErrorState,
-              cubit: _cubit,
             );
           }
         },
