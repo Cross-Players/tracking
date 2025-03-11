@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
+import 'package:gps/presentation/definition/string.dart';
 import 'package:gps/presentation/di/di.dart';
 import 'package:gps/presentation/feature/login/bloc/login_cubit.dart';
 import 'package:gps/presentation/feature/login/bloc/login_state.dart';
 import 'package:gps/presentation/feature/login/widget/login_form.dart';
-import 'package:gps/presentation/route/routes.dart';
+import 'package:gps/presentation/route/route.dart';
 import 'package:gps/presentation/widget/base_state.dart';
 
 class LoginPage extends StatefulWidget {
@@ -25,7 +25,7 @@ class _LoginPageState extends BaseState<LoginPage> {
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
           if (state is LoginSuccessState) {
-            context.go(Routes.home);
+            navigatorState.pushReplacementNamed(ScreenName.home);
           }
         },
         builder: (context, state) {

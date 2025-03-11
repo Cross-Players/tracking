@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gps/domain/use_case/auth/home_use_case.dart';
-import 'package:gps/presentation/feature/home/bloc/home_state.dart';
+import 'package:gps/presentation/feature/home/bloc/home/home_state.dart';
 import 'package:gps/presentation/feature/monitor/view_model/vehicle_status.dart';
 import 'package:injectable/injectable.dart';
 

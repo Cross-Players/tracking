@@ -35,8 +35,7 @@ class _LoginFormState extends State<LoginForm> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32.0),
                 child: SizedBox(
-                  width: widgetUtil.widthScreen(context) * 1,
-                  // width: widgetUtil.widthScreen(context) * 0.3,
+                  width: widgetUtil.widthScreen(context) * 0.3,
                   child: Form(
                     key: _formKey,
                     child: Column(

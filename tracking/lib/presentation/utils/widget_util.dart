@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gps/presentation/route/route.dart';
 import 'package:injectable/injectable.dart';
 import 'package:is_first_run/is_first_run.dart';
 import 'package:overlay_support/overlay_support.dart';
@@ -17,8 +18,12 @@ class WidgetUtil {
     _loadingOverlayEntry?.dismiss(animate: false);
   }
 
-  void hideKeyboard(BuildContext context) {
-    FocusScope.of(context).unfocus();
+  void closeGlobalKeyboard({BuildContext? context}) {
+    if (context != null) {
+      FocusScope.of(context).unfocus();
+      return;
+    }
+    FocusScope.of(navigatorKey.currentContext!).requestFocus(FocusNode());
   }
 
   bool checkLandscape(BuildContext context) =>

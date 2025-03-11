@@ -2,7 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gps/generated/l10n.dart';
-import 'package:gps/presentation/route/routes.dart';
+import 'package:gps/presentation/definition/string.dart';
+import 'package:gps/presentation/di/di.dart';
+import 'package:gps/presentation/route/route.dart';
 import 'package:gps/presentation/utils/app_log_util.dart';
 import 'package:gps/presentation/widget/base_state.dart';
 import 'package:overlay_support/overlay_support.dart';
@@ -61,30 +63,29 @@ class _MyAppState extends BaseState<MyApp> with WidgetsBindingObserver {
     AppLog.info('App Lifecycle State:  $state');
     if (state == AppLifecycleState.inactive ||
         state == AppLifecycleState.paused) {
-      widgetUtil.hideKeyboard(context);
+      widgetUtil.closeGlobalKeyboard();
     }
 
     if (state == AppLifecycleState.paused) {
-      widgetUtil.hideKeyboard(context);
+      widgetUtil.closeGlobalKeyboard();
     }
     if (state == AppLifecycleState.resumed) {}
   }
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => widgetUtil.hideKeyboard(context),
-      child: OverlaySupport.global(
-        child: Builder(
-          builder: (context) {
-            return MaterialApp.router(
-              // navigatorKey: navigatorKey,
-              debugShowCheckedModeBanner: false,
-              routerConfig: Routes.router,
-              localizationsDelegates: const [S.delegate],
-            );
-          },
-        ),
+    return OverlaySupport.global(
+      child: Builder(
+        builder: (context) {
+          return MaterialApp(
+            navigatorKey: navigatorKey,
+            onGenerateRoute: (settings) =>
+                di<AppRoute>().generateRoute(settings),
+            debugShowCheckedModeBanner: false,
+            initialRoute: ScreenName.login,
+            localizationsDelegates: const [S.delegate],
+          );
+        },
       ),
     );
   }
