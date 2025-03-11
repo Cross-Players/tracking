@@ -17,13 +17,9 @@ class WidgetUtil {
     _loadingOverlayEntry?.dismiss(animate: false);
   }
 
-  // void closeGlobalKeyboard({BuildContext? context}) {
-  //   if (context != null) {
-  //     FocusScope.of(context).unfocus();
-  //     return;
-  //   }
-  //   FocusScope.of(navigatorKey.currentContext!).requestFocus(FocusNode());
-  // }
+  void hideKeyboard(BuildContext context) {
+    FocusScope.of(context).unfocus();
+  }
 
   bool checkLandscape(BuildContext context) =>
       MediaQuery.of(context).orientation == Orientation.landscape;

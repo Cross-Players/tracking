@@ -61,27 +61,30 @@ class _MyAppState extends BaseState<MyApp> with WidgetsBindingObserver {
     AppLog.info('App Lifecycle State:  $state');
     if (state == AppLifecycleState.inactive ||
         state == AppLifecycleState.paused) {
-      // widgetUtil.closeGlobalKeyboard();
+      widgetUtil.hideKeyboard(context);
     }
 
     if (state == AppLifecycleState.paused) {
-      // widgetUtil.closeGlobalKeyboard();
+      widgetUtil.hideKeyboard(context);
     }
     if (state == AppLifecycleState.resumed) {}
   }
 
   @override
   Widget build(BuildContext context) {
-    return OverlaySupport.global(
-      child: Builder(
-        builder: (context) {
-          return MaterialApp.router(
-            // navigatorKey: navigatorKey,
-            debugShowCheckedModeBanner: false,
-            routerConfig: Routes.router,
-            localizationsDelegates: const [S.delegate],
-          );
-        },
+    return GestureDetector(
+      onTap: () => widgetUtil.hideKeyboard(context),
+      child: OverlaySupport.global(
+        child: Builder(
+          builder: (context) {
+            return MaterialApp.router(
+              // navigatorKey: navigatorKey,
+              debugShowCheckedModeBanner: false,
+              routerConfig: Routes.router,
+              localizationsDelegates: const [S.delegate],
+            );
+          },
+        ),
       ),
     );
   }
