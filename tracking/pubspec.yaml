@@ -53,6 +53,7 @@ dependencies:
     path: ../maps_plugin
   flutter_dotenv: 5.0.2
   flutter_inappwebview: ^6.1.5
+  go_router: ^14.8.1
 
 dev_dependencies:
   flutter_test:

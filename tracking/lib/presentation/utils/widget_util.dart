@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gps/presentation/route/route.dart';
 import 'package:injectable/injectable.dart';
 import 'package:is_first_run/is_first_run.dart';
 import 'package:overlay_support/overlay_support.dart';
@@ -18,13 +17,13 @@ class WidgetUtil {
     _loadingOverlayEntry?.dismiss(animate: false);
   }
 
-  void closeGlobalKeyboard({BuildContext? context}) {
-    if (context != null) {
-      FocusScope.of(context).unfocus();
-      return;
-    }
-    FocusScope.of(navigatorKey.currentContext!).requestFocus(FocusNode());
-  }
+  // void closeGlobalKeyboard({BuildContext? context}) {
+  //   if (context != null) {
+  //     FocusScope.of(context).unfocus();
+  //     return;
+  //   }
+  //   FocusScope.of(navigatorKey.currentContext!).requestFocus(FocusNode());
+  // }
 
   bool checkLandscape(BuildContext context) =>
       MediaQuery.of(context).orientation == Orientation.landscape;
