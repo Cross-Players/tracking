@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gps/presentation/definition/string.dart';
-import 'package:gps/presentation/route/route.dart';
+import 'package:go_router/go_router.dart';
 import 'package:gps/generated/l10n.dart';
+import 'package:gps/presentation/route/routes.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -49,12 +49,18 @@ class CustomAppBarState extends State<CustomAppBar> {
         ],
       ),
       actions: [
-        AppBarButton(icon: Icons.map, label: S.of(context).monitor, onTap: () {
-          navigatorState.pushReplacementNamed(ScreenName.tracking);
-        }),
-        AppBarButton(icon: Icons.description,label : 'QCVN31/2014', onTap: () {}),
-        AppBarButton(icon: Icons.article,label: 'TT09/2015', onTap: () {}),
-        AppBarButton(icon: Icons.document_scanner, label: 'Báo cáo doanh nghiệp',
+        AppBarButton(
+            icon: Icons.map,
+            label: S.of(context).monitor,
+            onTap: () {
+              context.go(Routes.monitor);
+            }),
+        AppBarButton(
+            icon: Icons.description, label: 'QCVN31/2014', onTap: () {}),
+        AppBarButton(icon: Icons.article, label: 'TT09/2015', onTap: () {}),
+        AppBarButton(
+            icon: Icons.document_scanner,
+            label: 'Báo cáo doanh nghiệp',
             onTap: () {}),
         AppBarButton(icon: Icons.table_chart, label: 'Quản lý', onTap: () {}),
         AppBarButton(icon: Icons.person, label: username, onTap: () {}),
